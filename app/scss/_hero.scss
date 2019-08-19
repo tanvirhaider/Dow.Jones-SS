@@ -1,0 +1,46 @@
+
+
+.hero-style {
+    @import 'cta';
+    
+    position: absolute;
+    height: 100%;
+    width: 560px;
+    left: 260px;
+    overflow: hidden;
+    pointer-events: none;
+  //  background-color: lightgray;
+
+    @include breakpoint(small) {
+        width: calc( 100% - 260px);
+    }
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        left: 0px;
+        top: 0px;
+    }
+
+    @import 'productCopy';
+    @import 'nav';
+    @import 'logo';
+
+    .heroBG-style {
+       // @include bgimage('bg.png');
+       background-color: #a60312;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: 100% 50%;
+        pointer-events: none;
+
+        @include breakpoint(mobile) {
+           visibility: hidden;
+        }
+    }
+
+ 
+
+   
+}

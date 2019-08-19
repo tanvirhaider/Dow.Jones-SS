@@ -1,0 +1,92 @@
+
+
+   .nav-style {
+    position: absolute;
+    width: auto;
+    height: 30px;
+    right: 10px;
+    bottom: 10px;
+    display: flex;
+    pointer-events: none;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        bottom: 170px;
+        right: 0px;
+        left: 0px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .navCopy-style {
+        font-family: "Proxima N W01 Reg";
+        width: 50px;
+        text-align: right;
+        padding-right: 10px;
+        box-sizing: border-box;
+        font-size: 14px;
+        line-height: 33px;
+        transition: ease 0.3s;
+        height: 30px;
+        position: relative;
+        user-select: none;
+        color: white;
+
+        @include breakpoint(mobile) {
+            visibility: hidden;
+        }
+    }
+
+    .nav_left-style {
+        @include bgimage('arrow-left.svg');
+        height: 30px;
+        width: 30px;
+        background-position: 50% 50%;
+        background-size: 40%;
+        background-repeat: no-repeat;
+        margin-right: 10px;
+        box-sizing: border-box;
+        pointer-events: auto;
+
+        &:hover {
+            transform: scale(1.2);
+            transition: ease 0.3s;
+
+            @include breakpoint(mobile) {
+                transform: scale(1);
+            }
+        }
+
+        @include breakpoint(mobile) {
+            left: 10px;
+            position: absolute;
+            background-size: 60%;
+        }
+    }
+
+    .nav_right-style {
+        @include bgimage('arrow-right.svg');
+        height: 30px;
+        width: 30px;
+        background-position: 50% 50%;
+        background-size: 40%;
+        background-repeat: no-repeat;
+        pointer-events: auto;
+
+        &:hover {
+            transform: scale(1.2);
+            transition: ease 0.3s;
+
+            @include breakpoint(mobile) {
+                transform: scale(1);
+            }
+        }
+
+        @include breakpoint(mobile) {
+            right: 10px;
+            position: absolute;
+            background-size: 60%;
+        }
+    }
+
+}

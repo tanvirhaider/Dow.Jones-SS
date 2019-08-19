@@ -1,0 +1,40 @@
+
+
+ // .cta-style {
+        //     font-family: "Proxima N W02 Smbd";
+        //     padding: 8px 15px;
+        //     border: 1px solid grey;
+        //     position: absolute;
+        //     bottom: 20px;
+
+        //     display:flex;
+        //     justify-content:center;
+        //     align-items:center;
+        //     cursor: pointer;
+        //     user-select: none;
+
+        //     &:hover {
+        //         background-color: grey;
+        //         color: white;
+        //     }
+        // }
+
+        .cta-style {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            @include bgimage('cta.png');
+            background-size: contain;
+            width: 100%;
+            background-position: 0% 0%;
+            height: 10px;
+            background-repeat: no-repeat;
+
+            @include breakpoint(mobile) {
+                background-position: 50% 0%;
+                height: 11px;
+                bottom: 20px;
+                left: 0px;
+                //right: 20px;
+            }
+        }

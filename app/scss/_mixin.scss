@@ -1,0 +1,36 @@
+
+
+@import 'settings';
+
+ // @include bgimage('large.jpg');
+@mixin bgimage($name) {
+  $url:"../assets/images/#{$name}";
+  background-image: url($url);
+}
+
+
+
+@mixin breakpoint($class) {
+  @if $class == mobile {
+    @media (max-width: 767px) { @content; }
+  }
+
+  @else if $class == small {
+    @media all and (min-width: 768px) and (max-width: 970px)  { @content; }
+  }
+ 
+  @else if $class == medium {
+    @media all and (min-width: 971px) and (max-width: 1200px)  { @content; }
+  }
+
+  // @else if $class == mediumLarge {
+  //   @media all and (min-width: 1025px) and (max-width: 1224px)  { @content; }
+  // }
+ 
+  @else if $class == large {
+    @media all and (min-width: 1201px) and (max-width: 1450px) { @content; }
+  }
+
+}
+
+

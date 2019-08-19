@@ -1,0 +1,54 @@
+
+
+@import 'reset';
+@import 'common';
+@import 'mixin';
+@import 'fonts';
+
+
+$left-padding: 10%;
+$right-padding: 10%;
+$left-padding-large: 5%;
+$right-padding-large: 5%;
+$left-padding-medium: 30px;
+$right-padding-medium: 30px;
+
+
+.stageStyle {
+    @import 'adcontainer';
+    position: relative;
+    width: 100%;
+    height:100%;
+    min-height: 270px;
+    max-height: 380px;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 350px;
+    max-width: 1605px;
+    
+
+    @include breakpoint(mobile) {
+        position: absolute;
+        min-width: 350px;
+        max-width: 414px;
+        max-height: 380px;
+        min-height: 380px;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0px;
+        right: 0px;
+        border: unset;
+    }
+
+
+    @include breakpoint(medium) {
+        max-width: 1080px;
+    }
+
+    @include breakpoint(large) {
+        max-width: 1342px;
+    }
+  
+}
+

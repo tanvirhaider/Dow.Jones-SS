@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="26px" viewBox="0 0 17 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>left arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Hennessy-1---1125-Copy-17" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1025.000000, -540.000000)">
+        <g id="flex-xl-wireframe-1125x600px-copy-9" stroke="#fff" stroke-width="1.15">
+            <g id="creative-area">
+                <g id="slideshow-arrows" transform="translate(969.000000, 541.000000)">
+                    <polyline id="left-arrow" transform="translate(64.500000, 12.000000) rotate(-180.000000) translate(-64.500000, -12.000000) " points="57.536441 24 72 12.2184832 57 0"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
