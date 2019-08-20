@@ -1,5 +1,134 @@
 "use strict";
 
+var newData = {
+  unit: "apac",
+  apac: {
+    slides: [{
+      index: 1,
+      header: "Through the Lens of the S&P China 500",
+      subheader: "A more complete pixture of the Chinese economy.",
+      image_desktop: "./assets/images/apac/apac-d-1.jpg",
+      image_mobile: "../assets/images/apac/apac-m-1.jpg",
+      cta: "Learn more"
+    }, {
+      index: 2,
+      header: "Persistence of Australian Active Funds",
+      subheader: "Do outperformers continue outperforming?",
+      image_desktop: "./assets/images/apac/apac-d-2.jpg",
+      image_mobile: "../assets/images/apac/apac-m-2.jpg",
+      cta: "Learn more"
+    }, {
+      index: 3,
+      header: "Understanding Commodities and the S&P GSCI",
+      subheader: "What tools exist for accessing various facets of the commodities market?",
+      image_desktop: "./assets/images/apac/apac-d-3.jpg",
+      image_mobile: "../assets/images/apac/apac-m-3.jpg",
+      cta: "Learn more"
+    }, {
+      index: 4,
+      header: "S&P 500® ESG: Integrating Environmental, Social, and Governance",
+      subheader: "How does it compare to the S&P 500?",
+      image_desktop: "./assets/images/apac/apac-d-4.jpg",
+      image_mobile: "../assets/images/apac/apac-m-4.jpg",
+      cta: "Learn more"
+    }]
+  },
+  latam: {
+    slides: [{
+      index: 1,
+      header: "Combinando Calidad, Valor y Crecimiento en México",
+      subheader: "Beneficios de combinar factores en México",
+      image_desktop: "../assets/images/latam/latam-d-1.jpg",
+      image_mobile: "../assets/images/latam/latam-m-1.jpg",
+      cta: "Aprenda más"
+    }, {
+      index: 2,
+      header: "El valor de la investigación: habilidad, capacidad y oportunidad",
+      subheader: "¿Cuánto vale la investigación en inversiones?",
+      image_desktop: "../assets/images/latam/latam-d-2.jpg",
+      image_mobile: "../assets/images/latam/latam-m-2.jpg",
+      cta: "Aprenda más"
+    }, {
+      index: 3,
+      header: "El S&P/BMV IPC cumple 40 años",
+      subheader: "La evolución del S&P/BMV IPC desde su lanzamiento",
+      image_desktop: "../assets/images/latam/latam-d-3.jpg",
+      image_mobile: "../assets/images/latam/latam-m-3.jpg",
+      cta: "Aprenda más"
+    }, {
+      index: 4,
+      header: "Scorecard SPIVA® para América Latina",
+      subheader: "El desempeño de los gestores activos frente a sus benchmarks",
+      image_desktop: "../assets/images/latam/latam-d-4.jpg",
+      image_mobile: "../assets/images/latam/latam-m-4.jpg",
+      cta: "Aprenda más"
+    }]
+  },
+  uk: {
+    slides: [{
+      index: 1,
+      header: "The Beauty of Simplicity: S&P 500® Low Volatility High Dividend",
+      subheader: "Compare this index to other dividend approaches.",
+      image_desktop: "../assets/images/uk/uk-d-1.jpg",
+      image_mobile: "../assets/images/uk/uk-m-1.jpg",
+      cta: "Find out"
+    }, {
+      index: 2,
+      header: "Blending Factors In Smart Beta Portfolios",
+      subheader: "Are two factors better than one?",
+      image_desktop: "../assets/images/uk/uk-d-2.jpg",
+      image_mobile: "../assets/images/uk/uk-m-2.jpg",
+      cta: "Find out"
+    }, {
+      index: 3,
+      header: "Defensive Factor Indices vs. Actively Managed Funds",
+      subheader: "Is cost-efficient downside protection possible?",
+      image_desktop: "../assets/images/uk/uk-d-3.jpg",
+      image_mobile: "../assets/images/uk/uk-m-3.jpg",
+      cta: "Find out"
+    }, {
+      index: 4,
+      header: "Placeholder Headline Text",
+      subheader: "Placeholder Headline Text",
+      image_desktop: "../assets/images/uk/uk-d-4.jpg",
+      image_mobile: "../assets/images/uk/uk-m-4.jpg",
+      cta: "Find out"
+    }]
+  },
+  us: {
+    slides: [{
+      index: 1,
+      header: "Is the Low Volatility Anomaly Universal?",
+      subheader: "Does the phenomenon hold up across regions?",
+      image_desktop: "../assets/images/us/us-d-1.jpg",
+      image_mobile: "../assets/images/us/us-m-1.jpg",
+      cta: "Learn more"
+    }, {
+      index: 2,
+      header: "Defense Beyond Bonds: Defensive Strategy Indices",
+      subheader: "Explore an alternative to traditional 60/40 mixes.",
+      image_desktop: "../assets/images/us/us-d-2.jpg",
+      image_mobile: "../assets/images/us/us-m-2.jpg",
+      cta: "Learn more"
+    }, {
+      index: 3,
+      header: "The Beauty of Simplicity: S&P 500®  Low Volatility High Dividend",
+      subheader: "Compare this index to other dividend approaches.",
+      image_desktop: "../assets/images/us/us-d-3.jpg",
+      image_mobile: "../assets/images/us/us-m-3.jpg",
+      cta: "Learn more"
+    }, {
+      index: 4,
+      header: "S&P 500® ESG: Integrating Environmental, Social, and Governance",
+      subheader: "How does it compare to the S&P 500?",
+      image_desktop: "../assets/images/us/us-d-4.jpg",
+      image_mobile: "../assets/images/us/us-m-4.jpg",
+      cta: "Learn more"
+    }]
+  }
+};
+"use strict";
+
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 /*!
@@ -10104,7 +10233,14 @@ function () {
   function Sprite(data) {
     _classCallCheck(this, Sprite);
 
-    var obj = document.createElement('div');
+    var obj;
+
+    if (data.element) {
+      obj = document.createElement(data.element);
+    } else {
+      obj = document.createElement('div');
+    }
+
     this.obj = obj;
 
     if (data.id) {
@@ -10303,6 +10439,18 @@ function () {
       var obj = this.obj;
       obj.addEventListener('mousemove', func);
     }
+  }, {
+    key: "html",
+    value: function html(newtext) {
+      var obj = this.obj;
+      obj.innerHTML = newtext;
+    }
+  }, {
+    key: "text",
+    value: function text(newtext) {
+      var obj = this.obj;
+      obj.innerText = newtext;
+    }
   }]);
 
   return Sprite;
@@ -10347,8 +10495,19 @@ function () {
   function Slideshow(data) {
     _classCallCheck(this, Slideshow);
 
+    var intervalTimer;
+    this.intervalTimer = intervalTimer;
+    var scope = this;
+    scope.id = data.id; // var globalData = window['slideData_' + data.id] = {
+    //     index: 0,
+    //     id: data.id,
+    //     total: data.images.length,
+    //     location: data.images
+    // }
+    // scope.data = globalData;
+
     var cardHolder = new Sprite({
-      id: data.id + "-cardHolder",
+      id: data.id,
       class: data.class,
       container: data.container
     });
@@ -10356,9 +10515,100 @@ function () {
     this.obj = cardHolder;
     cardHolder.counter = data.counter;
     cardHolder.numberOfitem = data.images.length;
-    cardHolder.width = data.width; //cardHolder.height = data.height;
-
     cardHolder.counter = data.images.length;
+    var eachImgWidth;
+
+    if (data.responsive) {
+      eachImgWidth = data.container.offsetWidth;
+      window.addEventListener("resize", function () {
+        eachImgWidth = data.container.offsetWidth;
+        scope.resize({
+          width: eachImgWidth
+        });
+      });
+    } else {
+      eachImgWidth = data.width;
+    }
+
+    if (data.auto) {
+      var lauchAutoSlideshow = function lauchAutoSlideshow() {
+        scope.intervalTimer = setInterval(function () {
+          scope.move({
+            direction: data.auto.direction,
+            duration: slideMoveDuration,
+            pause: false
+          });
+
+          if (data.auto.count > 0) {
+            countTracker++;
+
+            if (countTracker == data.auto.count) {
+              clearInterval(scope.intervalTimer);
+            }
+          }
+        }, data.auto.delay);
+      };
+
+      var countTracker = 0;
+      var slideMoveDuration = 0.75;
+
+      if (data.auto.duration) {
+        slideMoveDuration = Number(data.auto.duration / 1000);
+      }
+
+      if (data.auto.initialdelay) {
+        setTimeout(function () {
+          lauchAutoSlideshow();
+        }, data.auto.initialdelay);
+      } else {
+        lauchAutoSlideshow();
+      }
+    }
+
+    if (data.nav) {
+      var rightNav = data.nav.left;
+      var leftNav = data.nav.right;
+      leftNav.addEventListener('click', function () {
+        console.log("left nav clicked");
+        scope.move({
+          direction: "reverse",
+          duration: 0.75
+        }); // move left
+
+        if (data.platform) {
+          if (data.platform == "sizmek") {
+            window.EB.userActionCounter("nav-left");
+          }
+        }
+      }, false);
+      rightNav.addEventListener('click', function () {
+        console.log("right nav clicked");
+        scope.move({
+          direction: "forward",
+          duration: 0.75
+        }); // move left
+
+        if (data.platform) {
+          if (data.platform == "sizmek") {
+            window.EB.userActionCounter("nav-right");
+          }
+        }
+      }, false);
+    }
+
+    if (data.counter) {
+      var scope = this;
+      var idForPM = String(data.id); //  console.log("data counter: ", data.counter);
+      // window.addEventListener("message", data.counter, false);
+
+      cardHolder.obj.addEventListener("custom", data.counter, false);
+    }
+
+    if (data.dots) {
+      scope.dots(data);
+    } //console.log(eachImgWidth);
+
+
     var _i = 0;
 
     for (var j = 0; j < 3; j++) {
@@ -10367,7 +10617,7 @@ function () {
           id: data.id + "-cardHolder-box-" + _i,
           class: "ss-box-style",
           container: cardHolder.obj,
-          width: data.width
+          width: eachImgWidth
         });
         box.obj.setAttribute('data-index-number', _i);
         var cardPic = new Sprite({
@@ -10380,21 +10630,148 @@ function () {
       }
     }
 
+    var element = cardHolder.obj.querySelector('.ss-box-style');
+    var style = getComputedStyle(element); //  console.log("computed style: ",style.width);
+
+    var computedWidth = style.width;
+    var tempStringtoprocess = computedWidth.length - 2;
+    var tempres = computedWidth.substr(0, tempStringtoprocess);
     TweenMax.set(cardHolder.obj, {
       delay: 0,
-      x: -(data.images.length * data.width)
-    }); //return cardHolder;
+      x: -(data.images.length * tempres)
+    });
+
+    if (data.width) {
+      cardHolder.width = data.width;
+    } else {
+      cardHolder.width = tempres;
+    } //return cardHolder;
+
 
     return this;
   }
 
   _createClass(Slideshow, [{
+    key: "dots",
+    value: function dots(data) {
+      // console.log("create dots " ,data.dots);
+      var scope = this;
+      var dotHolder = new Sprite({
+        id: data.id + "-dotHolder",
+        element: "div",
+        class: data.dots.background,
+        container: data.container
+      });
+      var dotHolder = new Sprite({
+        id: data.id + "-dotHolder",
+        element: "ul",
+        class: data.dots.class,
+        container: data.container
+      });
+
+      for (var i = 0; i < data.images.length; i++) {
+        var eachDots = new Sprite({
+          id: data.id + "-dot-" + i,
+          element: "li",
+          container: dotHolder.obj
+        });
+
+        if (data.dots.interactive) {
+          eachDots.obj.addEventListener('click', function () {
+            scope.jumptoframe();
+          }, false);
+        }
+
+        if (i == 0) {
+          eachDots.obj.style.backgroundColor = data.dots.active;
+        } else {
+          eachDots.obj.style.backgroundColor = data.dots.inactive;
+        }
+
+        eachDots.obj.setAttribute('data-active', data.dots.active);
+        eachDots.obj.setAttribute('data-inactive', data.dots.inactive);
+        eachDots.obj.setAttribute('data-index-number', i);
+        eachDots.obj.setAttribute('data-parent', scope.cardHolder.obj.id);
+        eachDots.obj.setAttribute('data-total', data.images.length); //   console.log(eachDots.obj.id);
+      }
+    }
+  }, {
+    key: "updateDotPosition",
+    value: function updateDotPosition(data) {
+      var scope = this; // console.log(data);
+
+      var currentIndex = Number(data.selected % data.total);
+
+      for (var i = 0; i < data.total; i++) {
+        var tempDot = document.getElementById(data.parent + "-dot-" + i);
+
+        if (tempDot.dataset) {
+          var activeColor = tempDot.dataset.active;
+          var inActiveColor = tempDot.dataset.inactive;
+
+          if (i != currentIndex) {
+            tempDot.style.backgroundColor = inActiveColor;
+          } else {
+            tempDot.style.backgroundColor = activeColor;
+          }
+        }
+      }
+    }
+  }, {
+    key: "jumptoframe",
+    value: function jumptoframe() {
+      //  console.log(event.target);
+      var parent = event.target.dataset.parent;
+      var totalSlides = event.target.dataset.total;
+      var currentCounter = Number(event.target.dataset.indexNumber);
+      console.log(parent);
+      this.jump(event);
+      this.updateDotPosition({
+        parent: parent,
+        total: totalSlides,
+        selected: currentCounter
+      });
+
+      try {
+        var e = new CustomEvent("custom", {
+          detail: currentCounter
+        });
+        document.getElementById(parent).dispatchEvent(e);
+      } catch (Error) {
+        console.error(Error);
+      }
+    }
+  }, {
+    key: "jump",
+    value: function jump(event) {
+      var scope = this;
+      var parent = event.target.dataset.parent;
+      var totalSlides = event.target.dataset.total;
+      var parentElement = document.getElementById(parent);
+      var currentCounter = event.target.dataset.indexNumber;
+      var element = parentElement.querySelector('.ss-box-style');
+      var style = getComputedStyle(element);
+      var computedWidth = style.width;
+      var tempStringtoprocess = computedWidth.length - 2;
+      var tempres = computedWidth.substr(0, tempStringtoprocess);
+      var totalOffset = -(tempres * currentCounter);
+      TweenMax.to(parentElement, 0.5, {
+        delay: 0,
+        x: totalOffset
+      });
+    }
+  }, {
     key: "move",
     value: function move(data) {
       var cardHolder = this.cardHolder;
       var animationDuration;
       var displacement;
       var whichDirection = data.direction;
+      var element = cardHolder.obj.querySelector('.ss-box-style');
+      var style = getComputedStyle(element);
+      var computedWidth = style.width;
+      var tempStringtoprocess = computedWidth.length - 2;
+      var tempres = computedWidth.substr(0, tempStringtoprocess);
 
       if (data.duration) {
         animationDuration = data.duration;
@@ -10405,7 +10782,12 @@ function () {
       if (data.delta) {
         displacement = data.delta;
       } else {
-        displacement = cardHolder.width;
+        displacement = tempres;
+      }
+
+      if (data.pause == false) {} else {
+        // console.log("pause now");
+        clearInterval(this.intervalTimer);
       }
 
       if (whichDirection == "forward" || whichDirection == "left") {
@@ -10436,80 +10818,100 @@ function () {
 
         var deltaX = calculateMatrixX_Distance(ss.obj);
 
-        if (deltaX <= -(ss.width * (ss.numberOfitem + 1))) {
+        if (deltaX <= -(displacement * (ss.numberOfitem + 1))) {
           ss.counter = 1;
           TweenMax.set(ss.obj, {
-            x: -ss.width
+            x: -displacement
           });
         }
 
         if (deltaX >= 0) {
           ss.counter = ss.numberOfitem;
           TweenMax.set(ss.obj, {
-            x: -(ss.width * ss.numberOfitem)
+            x: -(displacement * ss.numberOfitem)
           });
         }
       }
+
+      if (data.dots) {
+        this.updateDotPosition({
+          parent: cardHolder.obj.id,
+          total: cardHolder.numberOfitem,
+          selected: cardHolder.counter
+        });
+      }
+
+      var sIndex = Number(cardHolder.counter % cardHolder.numberOfitem);
+
+      if (sIndex >= 0) {
+        try {
+          var event = new CustomEvent("custom", {
+            detail: sIndex
+          });
+          cardHolder.obj.dispatchEvent(event);
+        } catch (Error) {
+          console.error(Error);
+        }
+      } else {
+        try {
+          var event = new CustomEvent("custom", {
+            detail: 0
+          });
+          cardHolder.obj.dispatchEvent(event);
+          this.updateDotPosition({
+            parent: cardHolder.obj.id,
+            total: cardHolder.numberOfitem,
+            selected: 0
+          });
+        } catch (Error) {
+          console.error(Error);
+        }
+      }
+    }
+  }, {
+    key: "resize",
+    value: function resize(data) {
+      var cardHolder = this.cardHolder;
+      var currentCounter = cardHolder.counter;
+      var numberOfImagesinSSx3 = cardHolder.obj.childElementCount;
+
+      for (var i = 0; i < numberOfImagesinSSx3; i++) {
+        var tempItems = cardHolder.obj.children[i];
+        tempItems.style.width = data.width + "px";
+      }
+
+      var element = cardHolder.obj.querySelector('.ss-box-style');
+      var style = getComputedStyle(element); // console.log("computed style: ",style.width);
+
+      var computedWidth = style.width;
+      var tempStringtoprocess = computedWidth.length - 2;
+      var tempres = computedWidth.substr(0, tempStringtoprocess);
+
+      if (data.width) {
+        cardHolder.width = data.width;
+      } else {
+        cardHolder.width = tempres;
+      }
+
+      var totalOffset = -(tempres * currentCounter);
+      TweenMax.set(cardHolder.obj, {
+        delay: 0,
+        x: totalOffset
+      });
     }
   }]);
 
   return Slideshow;
-}(); // Usage 
-
-/*. scss style for this
-
-
-
-*/
+}();
 "use strict";
 
-/*
-  Willow Studios Inc.
-  developer: Tanvir Haider 
-  contact info:  contact@willow.studio
-  Happy to help with any development and Animation
-  --------------------------------------------------------------------------------------------
-
-
-
-                                        contact@willow.studio                                       
-                                       HappyToDevelopAnything:)                                     
-                                     webGL./. | .|  |- |+ ..SVG|                                    
-                                    .CSS  +. .+  |  |  |:    htm|                                   
-                                    :21|  |. .|  |  |  |:     747                                   
-                                    :MM.  |. .|  |  |  |: .|  NM|                                   
-                             .......|MM.  |. .|  |  |  |: .|  NMy.......                            
-                          .|aftereffects  |. .|  |  |  |:  |  CanvasAnima||                         
-                        .|CREATOR|::|::|. |. .|  |  |  |;  |  |  .||S|:GREAT.                       
-                        |MN: .  || .|  0. |. .|  |  |  |#  |  |. |: .|   .dMd                       
-                        NM|  0. :|  |  |  |. .|  |  |  |C  |  |  /| .|    :MM|                      
-                       .MM|  |  :|  |  |  |. .|  |  |  |+  |  |  /| .|  : .MM/                      
-                       .MM|  |  :|  |  |  |. .|  |  |  |+  |  |  /| .|  y..MM/                      
-              ../||||||yMM/  |  :|  |  | .|. .|  |  |  |:  |  |  /| .|  | .MMh||||||+|.             
-            .+646.824.6777.  |  :|  |  | ||. .|  |  |  |:  +  |  /| .|  | .yyyyhyyhdNMN|.           
-           .dMm/|  |. |. .|  |  :|  |  | .|      |  |  |:     |  /| .|  |  || :+ .:  :hMN|          
-           |MN. |. |. |.  |  |  :|  |  |  .      |  :  |:     |  /- .|  |  +. .| .y  /.hMd          
-           dMh  |  |. |.  |  |  ..  |  |         .     .-     -  /-  |  |  +. .|  |  | +MM          
-           dMh  |  |. |.  |  |   .ydmddmddh|+.          .+|jQuery+++ .  |  +. .|  |  | +MM.         
-           dMh  |  |. |.  |  |   .||d||d||ymMMh.      NODEJS|||||||+    |  +. .|  |  | +MM.         
-           hM|  .  |. ..  |  |      |  |    -dMN-    /MMy.              |  +. .|  |    /MN          
-            .      |.     |  .      |  |     .mMm   .NMh                |  +. .|  |.    ..          
-                   .      |         :  |      for.  :MM/                |     .|  .                 
-                          |            |      {i}.  :MM/                |     .|                    
-                          |            |      oMM.  :MM/                .     .|                    
-                          .            .  +y/ oMM.  :MM/                                        
-                                          ymy oMM.  :MM/                                            
-                           -o-   /o-   /+.:s: oMM.  :MM+   .+/   .+/   .+-                          
-                           :Nd  :NNd. -Nm.hNy oMM.  :MM+   .dN: .dNN/  hN/                          
-                            yN+ dmoNo hN/ hNy oMM.  :MM+    :Nh +Nsmd./Nh                           
-                            \mmoNo dm+Ny  hNy sMM.  :MM+.oyo.sN+md.+Nodm/                           
-                             /NNd. :NNm.  hNy sMM.  :MM//MMM+.dNN/ .dNN+                            
-                              \+.   .+/   -+- -o/   .++..:+/. \+/   .+/ 
-
-
-----------------------------------------------------------------------------------------------
-
-*/
+// @codekit-prepend "adData.js"
+// @codekit-prepend "TweenMax.js"
+// @codekit-prepend  "willow-js/stage.js"
+// @codekit-prepend  "willow-js/sprite.js"
+// @codekit-prepend  "willow-js/utility.js"
+// @codekit-prepend  "willow-js/slideshow-2.0.js"
+// @codekit-append  "_Sizmek.js"
 var adData = {
   unit: "panthere",
   // "panthere", "santos"
@@ -10558,25 +10960,26 @@ try {
   var widthOftheContainer = document.body.ownerDocument.defaultView.frameElement.parentElement.parentElement.parentElement.offsetWidth;
 } catch (Error) {}
 
-var heightOftheContainer = undefined; // @codekit-prepend "TweenMax.js"
-// @codekit-prepend  "willow-js/stage.js"
-// @codekit-prepend  "willow-js/sprite.js"
-// @codekit-prepend  "willow-js/utility.js"
-// @codekit-prepend  "willow-js/slideshow.js"
-// @codekit-append  "_Sizmek.js"
-
-var offsetArray = arrayOfset(adData[adData["unit"]].images);
-adData[adData["unit"]].imagesofset = offsetArray;
+var heightOftheContainer = undefined;
+var offsetArray = [];
 var slideTrackerInt = 1;
-var totalSlideCount = adData[adData["unit"]].images.length; //console.log("total number of products: ",totalSlideCount);
+var totalSlideCount = newData[newData.unit].slides.length; //console.log("total number of products: ",totalSlideCount);
 
 var intervalTimer = 2;
 var intervalCount = 0;
 var fireMetrics = true;
 var autoAnimationStatus = true;
+var imgQueue = [];
 
 function init(all) {
+  for (var i = 0; i < totalSlideCount; i++) {
+    imgQueue.push(newData[newData.unit].slides[i].image_desktop); // newData[newData.unit].slides[0].image_desktop
+  }
+
+  offsetArray = arrayOfset(imgQueue); // adData[adData["unit"]].imagesofset = offsetArray;
   // console.group("FXL");
+
+  console.log(newData[newData.unit].slides[0].image_desktop);
   stage = new Stage({
     id: "willow-ad-stage",
     class: "stageStyle",
@@ -10645,7 +11048,7 @@ function init(all) {
       class: "header-style",
       container: slideCopy.obj,
       text: {
-        content: adData[adData["unit"]].headlines[i]
+        content: newData[newData.unit].slides[i].header
       }
     });
     var summary = new Sprite({
@@ -10653,7 +11056,7 @@ function init(all) {
       class: "summary-style",
       container: slideCopy.obj,
       text: {
-        content: adData[adData["unit"]].summaries[i]
+        content: newData[newData.unit].slides[i].subheader
       }
     });
     slideBG.obj.setAttribute('data-index-number', i);
@@ -10706,21 +11109,20 @@ function init(all) {
         updateCounter("left");
 
         if (navBlock == false) {
-          CLM.move({
-            direction: "forward",
-            delta: adWidth,
-            duration: 0.85
-          }); // move left
-
+          // CLM.move({
+          //     direction: "forward",
+          //     delta: adWidth,
+          //     duration: 0.85
+          // }); // move left
           CL1.move({
             direction: "forward",
-            delta: 260,
+            //delta: 260,
             duration: 0.85
           }); // move left
 
           CL3.move({
             direction: "forward",
-            delta: 260,
+            //delta: 260,
             duration: 0.75
           }); // move left
 
@@ -10745,21 +11147,20 @@ function init(all) {
         updateCounter("right");
 
         if (navBlock == false) {
-          CLM.move({
-            direction: "reverse",
-            delta: adWidth,
-            duration: 0.75
-          }); // move left
-
+          // CLM.move({
+          //     direction: "reverse",
+          //     delta: adWidth,
+          //     duration: 0.75
+          // }); // move left
           CL1.move({
             direction: "reverse",
-            delta: 260,
+            // delta: 260,
             duration: 0.75
           }); // move left
 
           CL3.move({
             direction: "reverse",
-            delta: 260,
+            // delta: 260,
             duration: 0.85
           }); // move left
 
@@ -10787,17 +11188,24 @@ function init(all) {
     container: ssMitem.obj
   });
   var CL1 = new Slideshow({
-    images: adData[adData["unit"]].images,
-    width: 260,
+    platform: "sizmek",
+    images: imgQueue,
+    // width: 260,
     height: 270,
+    responsive: true,
     id: "product-gallery1",
     class: "ss-card-style-1",
-    container: ss1item.obj
+    container: ss1item.obj,
+    counter: function counter(event) {
+      console.log(event.detail + 1);
+    }
   });
   var CL3 = new Slideshow({
-    images: adData[adData["unit"]].imagesofset,
-    width: 260,
+    platform: "sizmek",
+    images: offsetArray,
+    //width: 260,
     height: 270,
+    responsive: true,
     id: "product-gallery3",
     class: "ss-card-style-3",
     container: ss3item.obj
@@ -10810,9 +11218,18 @@ function init(all) {
       var currentItemGalleryM = document.getElementById("product-galleryM-cardHolder-box-" + i);
       var currentItemGallery1 = document.getElementById("product-gallery1-cardHolder-box-" + i);
       var currentItemGallery3 = document.getElementById("product-gallery3-cardHolder-box-" + i);
-      currentItemGalleryM.addEventListener("click", productGallery1Click);
-      currentItemGallery1.addEventListener("click", productGallery1Click);
-      currentItemGallery3.addEventListener("click", productGallery3Click);
+
+      try {
+        currentItemGalleryM.addEventListener("click", productGallery1Click);
+      } catch (Error) {}
+
+      try {
+        currentItemGallery1.addEventListener("click", productGallery1Click);
+      } catch (Error) {}
+
+      try {
+        currentItemGallery3.addEventListener("click", productGallery3Click);
+      } catch (Error) {}
     }
   }
 
@@ -10952,12 +11369,11 @@ function init(all) {
 
   function automation() {
     //console.log("automation init");
-    intervalCount++;
-    CLM.move({
-      direction: "reverse",
-      delta: adWidth,
-      duration: 0.85
-    }); // move left
+    intervalCount++; // CLM.move({
+    //     direction: "reverse",
+    //     delta: adWidth,
+    //     duration: 0.85
+    // }); // move left
 
     CL1.move({
       direction: "reverse",
@@ -10981,10 +11397,10 @@ function init(all) {
         clearInterval(autoRunInterval);
       } catch (Error) {}
     }
-  }
-
-  automation(); // var autoRunInterval = setTimeout(function(){ automation(); }, 700);
+  } //  automation();
+  // var autoRunInterval = setTimeout(function(){ automation(); }, 700);
   // var autoRunInterval = setInterval(function(){ automation (); }, 3000);
+
 }
 "use strict";
 

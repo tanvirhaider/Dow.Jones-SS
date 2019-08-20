@@ -9,6 +9,105 @@
 	],
 "creatorBuild": "28905",
 "files": {
+	"/app/assets/images/apac/apac-d-1.jpg": {
+		"ft": 16384,
+		"iS": 312118,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/apac/apac-d-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/apac/apac-d-2.jpg": {
+		"ft": 16384,
+		"iS": 324231,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/apac/apac-d-2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/apac/apac-d-3.jpg": {
+		"ft": 16384,
+		"iS": 237100,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/apac/apac-d-3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/apac/apac-d-4.jpg": {
+		"ft": 16384,
+		"iS": 477079,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/apac/apac-d-4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/apac/apac-m-1.jpg": {
+		"ft": 16384,
+		"iS": 748162,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/apac/apac-m-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/apac/apac-m-2.jpg": {
+		"ft": 16384,
+		"iS": 466202,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/apac/apac-m-2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/apac/apac-m-3.jpg": {
+		"ft": 16384,
+		"iS": 524466,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/apac/apac-m-3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/apac/apac-m-4.jpg": {
+		"ft": 16384,
+		"iS": 1136894,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/apac/apac-m-4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/apac/logo.png": {
+		"ft": 32768,
+		"iS": 33045,
+		"oA": 0,
+		"oAP": "/build/assets/images/apac/logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
 	"/app/assets/images/arrow-left.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -49,6 +148,105 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/latam/latam-d-1.jpg": {
+		"ft": 16384,
+		"iS": 118077,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/latam/latam-d-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/latam/latam-d-2.jpg": {
+		"ft": 16384,
+		"iS": 30508,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/latam/latam-d-2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/latam/latam-d-3.jpg": {
+		"ft": 16384,
+		"iS": 368187,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/latam/latam-d-3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/latam/latam-d-4.jpg": {
+		"ft": 16384,
+		"iS": 193720,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/latam/latam-d-4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/latam/latam-m-1.jpg": {
+		"ft": 16384,
+		"iS": 544664,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/latam/latam-m-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/latam/latam-m-2.jpg": {
+		"ft": 16384,
+		"iS": 91495,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/latam/latam-m-2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/latam/latam-m-3.jpg": {
+		"ft": 16384,
+		"iS": 896818,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/latam/latam-m-3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/latam/latam-m-4.jpg": {
+		"ft": 16384,
+		"iS": 360128,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/latam/latam-m-4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/latam/logo.png": {
+		"ft": 32768,
+		"iS": 33045,
+		"oA": 0,
+		"oAP": "/build/assets/images/latam/logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
 		"q": 100
 		},
 	"/app/assets/images/logo-panthere.png": {
@@ -205,6 +403,204 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/app/assets/images/uk/logo.png": {
+		"ft": 32768,
+		"iS": 33045,
+		"oA": 0,
+		"oAP": "/build/assets/images/uk/logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/app/assets/images/uk/uk-d-1.jpg": {
+		"ft": 16384,
+		"iS": 179192,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/uk/uk-d-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/uk/uk-d-2.jpg": {
+		"ft": 16384,
+		"iS": 550951,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/uk/uk-d-2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/uk/uk-d-3.jpg": {
+		"ft": 16384,
+		"iS": 255208,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/uk/uk-d-3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/uk/uk-d-4.jpg": {
+		"ft": 16384,
+		"iS": 366147,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/uk/uk-d-4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/uk/uk-m-1.jpg": {
+		"ft": 16384,
+		"iS": 305963,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/uk/uk-m-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/uk/uk-m-2.jpg": {
+		"ft": 16384,
+		"iS": 1233286,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/uk/uk-m-2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/uk/uk-m-3.jpg": {
+		"ft": 16384,
+		"iS": 530612,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/uk/uk-m-3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/uk/uk-m-4.jpg": {
+		"ft": 16384,
+		"iS": 814881,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/uk/uk-m-4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/us/logo.png": {
+		"ft": 32768,
+		"iS": 33045,
+		"oA": 0,
+		"oAP": "/build/assets/images/us/logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/app/assets/images/us/us-d-1.jpg": {
+		"ft": 16384,
+		"iS": 215524,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/us/us-d-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/us/us-d-2.jpg": {
+		"ft": 16384,
+		"iS": 232434,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/us/us-d-2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/us/us-d-3.jpg": {
+		"ft": 16384,
+		"iS": 179192,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/us/us-d-3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/us/us-d-4.jpg": {
+		"ft": 16384,
+		"iS": 477079,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/us/us-d-4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/us/us-m-1.jpg": {
+		"ft": 16384,
+		"iS": 432613,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/us/us-m-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/us/us-m-2.jpg": {
+		"ft": 16384,
+		"iS": 478656,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/us/us-m-2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/us/us-m-3.jpg": {
+		"ft": 16384,
+		"iS": 305963,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/us/us-m-3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/app/assets/images/us/us-m-4.jpg": {
+		"ft": 16384,
+		"iS": 1136894,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/us/us-m-4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
 	"/app/config.js": {
 		"ft": 64,
 		"ma": 0,
@@ -232,6 +628,16 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"/app/js/adData.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/build/js/adData-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/app/js/app.js": {
 		"ft": 64,
 		"ma": 1,
@@ -252,11 +658,21 @@
 		"sC": 3,
 		"tS": 0
 		},
-	"/app/js/willow-js/slideshow.js": {
+	"/app/js/willow-js/slideshow-2.0.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
+		"oAP": "/build/js/willow-js/slideshow-2.0-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/app/js/willow-js/slideshow.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
 		"oAP": "/build/js/willow-js/slideshow-min.js",
 		"oF": 0,
 		"sC": 3,

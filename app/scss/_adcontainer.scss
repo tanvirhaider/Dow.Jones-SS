@@ -3,7 +3,7 @@
     .adContainerStyle {
         @import 'slideshow';
         @import 'hero';
-        background-color: #a60312;
+        background-color: #000000;
         box-sizing: border-box;
         overflow: hidden;
        // border: 1px solid rgb(189, 189, 189);
@@ -55,16 +55,18 @@
         .ssMitem-style {
             width:100%;
             height: 100%;
-            position: absolute;
+            position: relative;
             overflow: hidden;
             left: 0px;
             right: 0px;
             margin-left: auto;
             margin-right: auto;
             visibility: hidden;
+            display: none;
 
             @include breakpoint(mobile) {
                 visibility: visible;
+                display: block;
             }
 
 
@@ -85,9 +87,9 @@
         }
 
         .ss1item-style {
-            width: 260px;
+            width: 600px;
             height: 100%;
-            position: absolute;
+            position: relative;
             overflow: hidden;
             left: 0px;
 
@@ -97,11 +99,11 @@
         }
 
         .ss3item-style {
-            width: calc( 3 * 260px);
+            width: calc( 100% - (600px + 580px));
             height: 100%;
-            position: absolute;
+            position: relative;
             overflow: hidden;
-            left: 820px;
+            //left: 820px;
 
             @include breakpoint(small) {
                 visibility: hidden;

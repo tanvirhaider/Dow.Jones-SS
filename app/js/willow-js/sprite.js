@@ -3,7 +3,15 @@
 
 class Sprite {
     constructor (data) {
-        var obj = document.createElement('div');
+        var obj;
+
+        if (data.element) {
+            obj = document.createElement(data.element);
+        }
+        else {
+            obj = document.createElement('div');
+        }
+        
         this.obj = obj;
         if (data.id) { obj.setAttribute('id', data.id); }
         else { obj.setAttribute('id',''); }
@@ -168,5 +176,15 @@ class Sprite {
     out (func) {
         var obj = this.obj;
         obj.addEventListener('mousemove', func);
+    }
+
+    html (newtext) {
+        var obj = this.obj;
+        obj.innerHTML = newtext;
+    }
+
+    text (newtext) {
+        var obj = this.obj;
+        obj.innerText = newtext;
     }
 }

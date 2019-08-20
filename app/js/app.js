@@ -1,52 +1,13 @@
 
 
-/*
-  Willow Studios Inc.
-  developer: Tanvir Haider 
-  contact info:  contact@willow.studio
-  Happy to help with any development and Animation
-  --------------------------------------------------------------------------------------------
 
-
-
-                                        contact@willow.studio                                       
-                                       HappyToDevelopAnything:)                                     
-                                     webGL./. | .|  |- |+ ..SVG|                                    
-                                    .CSS  +. .+  |  |  |:    htm|                                   
-                                    :21|  |. .|  |  |  |:     747                                   
-                                    :MM.  |. .|  |  |  |: .|  NM|                                   
-                             .......|MM.  |. .|  |  |  |: .|  NMy.......                            
-                          .|aftereffects  |. .|  |  |  |:  |  CanvasAnima||                         
-                        .|CREATOR|::|::|. |. .|  |  |  |;  |  |  .||S|:GREAT.                       
-                        |MN: .  || .|  0. |. .|  |  |  |#  |  |. |: .|   .dMd                       
-                        NM|  0. :|  |  |  |. .|  |  |  |C  |  |  /| .|    :MM|                      
-                       .MM|  |  :|  |  |  |. .|  |  |  |+  |  |  /| .|  : .MM/                      
-                       .MM|  |  :|  |  |  |. .|  |  |  |+  |  |  /| .|  y..MM/                      
-              ../||||||yMM/  |  :|  |  | .|. .|  |  |  |:  |  |  /| .|  | .MMh||||||+|.             
-            .+646.824.6777.  |  :|  |  | ||. .|  |  |  |:  +  |  /| .|  | .yyyyhyyhdNMN|.           
-           .dMm/|  |. |. .|  |  :|  |  | .|      |  |  |:     |  /| .|  |  || :+ .:  :hMN|          
-           |MN. |. |. |.  |  |  :|  |  |  .      |  :  |:     |  /- .|  |  +. .| .y  /.hMd          
-           dMh  |  |. |.  |  |  ..  |  |         .     .-     -  /-  |  |  +. .|  |  | +MM          
-           dMh  |  |. |.  |  |   .ydmddmddh|+.          .+|jQuery+++ .  |  +. .|  |  | +MM.         
-           dMh  |  |. |.  |  |   .||d||d||ymMMh.      NODEJS|||||||+    |  +. .|  |  | +MM.         
-           hM|  .  |. ..  |  |      |  |    -dMN-    /MMy.              |  +. .|  |    /MN          
-            .      |.     |  .      |  |     .mMm   .NMh                |  +. .|  |.    ..          
-                   .      |         :  |      for.  :MM/                |     .|  .                 
-                          |            |      {i}.  :MM/                |     .|                    
-                          |            |      oMM.  :MM/                .     .|                    
-                          .            .  +y/ oMM.  :MM/                                        
-                                          ymy oMM.  :MM/                                            
-                           -o-   /o-   /+.:s: oMM.  :MM+   .+/   .+/   .+-                          
-                           :Nd  :NNd. -Nm.hNy oMM.  :MM+   .dN: .dNN/  hN/                          
-                            yN+ dmoNo hN/ hNy oMM.  :MM+    :Nh +Nsmd./Nh                           
-                            \mmoNo dm+Ny  hNy sMM.  :MM+.oyo.sN+md.+Nodm/                           
-                             /NNd. :NNm.  hNy sMM.  :MM//MMM+.dNN/ .dNN+                            
-                              \+.   .+/   -+- -o/   .++..:+/. \+/   .+/ 
-
-
-----------------------------------------------------------------------------------------------
-
-*/
+// @codekit-prepend "adData.js"
+// @codekit-prepend "TweenMax.js"
+// @codekit-prepend  "willow-js/stage.js"
+// @codekit-prepend  "willow-js/sprite.js"
+// @codekit-prepend  "willow-js/utility.js"
+// @codekit-prepend  "willow-js/slideshow-2.0.js"
+// @codekit-append  "_Sizmek.js"
 
 var adData = {
     unit: "panthere",   // "panthere", "santos"
@@ -137,31 +98,36 @@ try { var widthOftheContainer = document.body.ownerDocument.defaultView.frameEle
 var heightOftheContainer = undefined;
 
 
-// @codekit-prepend "TweenMax.js"
-// @codekit-prepend  "willow-js/stage.js"
-// @codekit-prepend  "willow-js/sprite.js"
-// @codekit-prepend  "willow-js/utility.js"
-// @codekit-prepend  "willow-js/slideshow.js"
-// @codekit-append  "_Sizmek.js"
 
-var offsetArray = arrayOfset(adData[adData["unit"]].images);
-adData[adData["unit"]].imagesofset = offsetArray;
+
+var offsetArray = [];
 
 
 
 var slideTrackerInt = 1;
-var totalSlideCount = adData[adData["unit"]].images.length;
+var totalSlideCount = newData[newData.unit].slides.length;
 //console.log("total number of products: ",totalSlideCount);
 
 var intervalTimer = 2;
 var intervalCount = 0;
 var fireMetrics = true;
 var autoAnimationStatus = true;
+var imgQueue = [];
 
 
 function init (all) {
 
+    for (var i = 0; i < totalSlideCount; i++) {
+        imgQueue.push (newData[newData.unit].slides[i].image_desktop);
+        // newData[newData.unit].slides[0].image_desktop
+    }
+
+    offsetArray = arrayOfset(imgQueue);
+   // adData[adData["unit"]].imagesofset = offsetArray;
+
     // console.group("FXL");
+
+    console.log(newData[newData.unit].slides[0].image_desktop);
 
     stage = new Stage({
         id: "willow-ad-stage",
@@ -237,14 +203,14 @@ function init (all) {
             id: "header-" + i,
             class: "header-style",
             container: slideCopy.obj,
-            text: { content: adData[adData["unit"]].headlines[i] },
+            text: { content: newData[newData.unit].slides[i].header },
         });
 
         var summary = new Sprite({
             id: "summary-" + i,
             class: "summary-style",
             container: slideCopy.obj,
-            text: { content: adData[adData["unit"]].summaries[i] },
+            text: { content: newData[newData.unit].slides[i].subheader },
         });
 
         slideBG.obj.setAttribute('data-index-number', i);
@@ -291,23 +257,23 @@ function init (all) {
                 updateCounter("left");
 
                 if (navBlock == false) {
-                    CLM.move({
-                        direction: "forward",
-                        delta: adWidth,
-                        duration: 0.85
-                    }); // move left
+                    // CLM.move({
+                    //     direction: "forward",
+                    //     delta: adWidth,
+                    //     duration: 0.85
+                    // }); // move left
 
 
                     CL1.move({
                         direction: "forward",
-                        delta: 260,
+                        //delta: 260,
                         duration: 0.85
                     }); // move left
 
 
                     CL3.move({
                         direction: "forward",
-                        delta: 260,
+                        //delta: 260,
                         duration: 0.75
                     }); // move left
 
@@ -330,22 +296,22 @@ function init (all) {
                 updateCounter("right");
 
                 if (navBlock == false) {
-                    CLM.move({
-                        direction: "reverse",
-                        delta: adWidth,
-                        duration: 0.75
-                    }); // move left
+                    // CLM.move({
+                    //     direction: "reverse",
+                    //     delta: adWidth,
+                    //     duration: 0.75
+                    // }); // move left
 
                     CL1.move({
                         direction: "reverse",
-                        delta: 260,
+                       // delta: 260,
                         duration: 0.75
                     }); // move left
 
 
                     CL3.move({
                         direction: "reverse",
-                        delta: 260,
+                       // delta: 260,
                         duration: 0.85
                     }); // move left
 
@@ -355,12 +321,12 @@ function init (all) {
         }
     });
 
-
     var ss3item = new Sprite({
         id: "ss3item",
         class: "ss3item-style",
         container: adContainer.obj
     });
+
 
 
     var CLM = new Slideshow({
@@ -379,18 +345,25 @@ function init (all) {
     });
 
     var CL1 = new Slideshow({
-        images: adData[adData["unit"]].images,
-        width: 260,
+        platform: "sizmek",
+        images: imgQueue,
+       // width: 260,
         height: 270,
+        responsive: true,
         id: "product-gallery1",
         class: "ss-card-style-1",
-        container: ss1item.obj
+        container: ss1item.obj,
+        counter: function(event) {
+            console.log(event.detail + 1);
+        }
     });
 
     var CL3 = new Slideshow({
-        images: adData[adData["unit"]].imagesofset,
-        width: 260,
+        platform: "sizmek",
+        images: offsetArray,
+        //width: 260,
         height: 270,
+        responsive: true,
         id: "product-gallery3",
         class: "ss-card-style-3",
         container: ss3item.obj
@@ -404,9 +377,12 @@ function init (all) {
             var currentItemGallery1 = document.getElementById("product-gallery1-cardHolder-box-" + i);
             var currentItemGallery3 = document.getElementById("product-gallery3-cardHolder-box-" + i);
 
-            currentItemGalleryM.addEventListener("click", productGallery1Click);
-            currentItemGallery1.addEventListener("click", productGallery1Click);
-            currentItemGallery3.addEventListener("click", productGallery3Click);
+            try {  currentItemGalleryM.addEventListener("click", productGallery1Click); } catch (Error) {}
+            try {  currentItemGallery1.addEventListener("click", productGallery1Click);} catch (Error) {}
+            try { currentItemGallery3.addEventListener("click", productGallery3Click); } catch (Error) {}
+           
+           
+            
 
         }
     }
@@ -535,11 +511,11 @@ function init (all) {
         //console.log("automation init");
         intervalCount++;
 
-        CLM.move({
-            direction: "reverse",
-            delta: adWidth,
-            duration: 0.85
-        }); // move left
+        // CLM.move({
+        //     direction: "reverse",
+        //     delta: adWidth,
+        //     duration: 0.85
+        // }); // move left
 
 
         CL1.move({
@@ -566,7 +542,7 @@ function init (all) {
         }
     }
 
-    automation();
+  //  automation();
     // var autoRunInterval = setTimeout(function(){ automation(); }, 700);
 
 
