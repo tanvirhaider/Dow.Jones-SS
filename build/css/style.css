@@ -190,22 +190,6 @@ body {
       width: 580px;
       overflow: hidden;
       pointer-events: none; }
-      .stageStyle .adContainerStyle .hero-style .cta-style {
-        position: absolute;
-        bottom: 20px;
-        left: 20px;
-        background-image: url("../assets/images/cta.png");
-        background-size: contain;
-        width: 100%;
-        background-position: 0% 0%;
-        height: 10px;
-        background-repeat: no-repeat; }
-        @media (max-width: 767px) {
-          .stageStyle .adContainerStyle .hero-style .cta-style {
-            background-position: 50% 0%;
-            height: 11px;
-            bottom: 20px;
-            left: 0px; } }
       @media all and (min-width: 768px) and (max-width: 970px) {
         .stageStyle .adContainerStyle .hero-style {
           width: calc( 100% - 260px); } }
@@ -234,6 +218,26 @@ body {
             width: 100%;
             height: 100%;
             pointer-events: auto; }
+          .stageStyle .adContainerStyle .hero-style .slideCopyContainer-style .slideCopy-style .cta-style {
+            position: absolute;
+            bottom: 15px;
+            left: 20px;
+            background-size: contain;
+            width: auto;
+            background-position: 0% 0%;
+            height: 30px;
+            background-repeat: no-repeat;
+            border: 1px solid white;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-family: "Proxima N W02 Smbd";
+            font-size: 18px; }
+            @media (max-width: 767px) {
+              .stageStyle .adContainerStyle .hero-style .slideCopyContainer-style .slideCopy-style .cta-style {
+                background-position: 50% 0%;
+                height: 11px;
+                bottom: 20px;
+                left: 0px; } }
           .stageStyle .adContainerStyle .hero-style .slideCopyContainer-style .slideCopy-style .header-style {
             font-family: "Proxima N W02 Smbd";
             font-size: 26px;
@@ -242,7 +246,8 @@ body {
                -moz-user-select: none;
                 -ms-user-select: none;
                     user-select: none;
-            pointer-events: none; }
+            pointer-events: none;
+            line-height: 26px; }
             @media (max-width: 767px) {
               .stageStyle .adContainerStyle .hero-style .slideCopyContainer-style .slideCopy-style .header-style {
                 font-size: 20px;

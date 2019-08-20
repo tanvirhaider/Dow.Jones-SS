@@ -2,6 +2,7 @@
 
 var newData = {
   unit: "apac",
+  logo: "assets/images/logo.png",
   apac: {
     slides: [{
       index: 1,
@@ -9,28 +10,28 @@ var newData = {
       subheader: "A more complete pixture of the Chinese economy.",
       image_desktop: "./assets/images/apac/apac-d-1.jpg",
       image_mobile: "../assets/images/apac/apac-m-1.jpg",
-      cta: "Learn more"
+      cta: "Learn more 1"
     }, {
       index: 2,
       header: "Persistence of Australian Active Funds",
       subheader: "Do outperformers continue outperforming?",
       image_desktop: "./assets/images/apac/apac-d-2.jpg",
       image_mobile: "../assets/images/apac/apac-m-2.jpg",
-      cta: "Learn more"
+      cta: "Learn more 2"
     }, {
       index: 3,
       header: "Understanding Commodities and the S&P GSCI",
       subheader: "What tools exist for accessing various facets of the commodities market?",
       image_desktop: "./assets/images/apac/apac-d-3.jpg",
       image_mobile: "../assets/images/apac/apac-m-3.jpg",
-      cta: "Learn more"
+      cta: "Learn more 3"
     }, {
       index: 4,
       header: "S&P 500® ESG: Integrating Environmental, Social, and Governance",
       subheader: "How does it compare to the S&P 500?",
       image_desktop: "./assets/images/apac/apac-d-4.jpg",
       image_mobile: "../assets/images/apac/apac-m-4.jpg",
-      cta: "Learn more"
+      cta: "Learn more 4"
     }]
   },
   latam: {
@@ -11016,14 +11017,6 @@ function init(all) {
     class: "slideCopyContainer-style",
     container: hero.obj
   });
-  var cta = new Sprite({
-    id: "cta",
-    class: "cta-style",
-    container: hero.obj,
-    click: {
-      function: ctaClicked
-    }
-  });
 
   for (var i = 0; i < totalSlideCount; i++) {
     var slideCopy = new Sprite({
@@ -11032,9 +11025,12 @@ function init(all) {
       container: slideCopyContainer.obj
     }); // slideCopy.obj.style.visibility = "hidden";
 
-    TweenMax.set(slideCopy.obj, {
-      autoAlpha: 0
-    });
+    if (i != 0) {
+      TweenMax.set(slideCopy.obj, {
+        autoAlpha: 0
+      });
+    }
+
     var slideBG = new Sprite({
       id: "slideBG-" + i,
       class: "slideBG-style",
@@ -11059,6 +11055,17 @@ function init(all) {
         content: newData[newData.unit].slides[i].subheader
       }
     });
+    var cta = new Sprite({
+      id: "cta",
+      class: "cta-style",
+      container: slideCopy.obj,
+      click: {
+        function: ctaClicked
+      },
+      text: {
+        content: newData[newData.unit].slides[i].cta
+      }
+    });
     slideBG.obj.setAttribute('data-index-number', i);
   }
 
@@ -11066,7 +11073,7 @@ function init(all) {
     id: "logo",
     class: "logo-style",
     container: hero.obj,
-    image: adData[adData["unit"]].logo,
+    image: newData.logo,
     click: {
       function: function _function() {
         autoAnimationStatus = false;

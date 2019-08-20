@@ -21,14 +21,20 @@
 
         .cta-style {
             position: absolute;
-            bottom: 20px;
+            bottom: 15px;
             left: 20px;
-            @include bgimage('cta.png');
+          //  @include bgimage('cta.png');
             background-size: contain;
-            width: 100%;
+            width: auto;
             background-position: 0% 0%;
-            height: 10px;
+            height: 30px;
             background-repeat: no-repeat;
+            border: 1px solid white;
+            padding-left: 10px;
+            padding-right: 10px;
+
+            font-family: "Proxima N W02 Smbd";
+            font-size: 18px;
 
             @include breakpoint(mobile) {
                 background-position: 50% 0%;

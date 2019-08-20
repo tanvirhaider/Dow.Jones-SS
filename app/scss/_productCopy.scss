@@ -27,6 +27,8 @@
             pointer-events: auto;
          //   background-color: pink;
         }
+
+        @import 'cta';
        
 
         .header-style {
@@ -35,6 +37,7 @@
             margin-bottom: 3px;
             user-select: none;
             pointer-events: none;
+            line-height: 26px;
 
             @include breakpoint(mobile) {
                 font-size: 20px;
