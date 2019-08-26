@@ -5,6 +5,9 @@
 @import 'mixin';
 @import 'fonts';
 
+$dot-gap: 5px;
+$dot-diameter: 8px;
+$dot-bg-gradient-color: rgb(0, 0, 0);
 
 $left-padding: 10%;
 $right-padding: 10%;
@@ -43,11 +46,11 @@ $right-padding-medium: 30px;
 
 
     @include breakpoint(medium) {
-        max-width: 1080px;
+       // max-width: 1080px;
     }
 
     @include breakpoint(large) {
-        max-width: 1342px;
+     //   max-width: 1342px;
     }
   
 }

@@ -1,22 +1,28 @@
 
 
 .hero-style {
-   
-    
     position: relative;
     height: 100%;
     width: 580px;
-   // left: 260px;
     overflow: hidden;
     pointer-events: none;
-  //  background-color: lightgray;
 
     @include breakpoint(small) {
-        width: calc( 100% - 260px);
+        width: 100%;
+        position: absolute;
+        left: 0px;
+        background: linear-gradient(to bottom,  rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     }
 
     @include breakpoint(mobile) {
         width: 100%;
+        left: 0px;
+        top: 0px;
+        position: absolute;
+    }
+
+    @include breakpoint(medium) {
+        width: 50%;
         left: 0px;
         top: 0px;
     }

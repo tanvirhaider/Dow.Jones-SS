@@ -1,9 +1,9 @@
 
-
-
 var newData = {
-	unit: "apac",
+	unit: "apac",	// "apac", "latam", "uk", "us"
 	logo: "assets/images/logo.png",
+	dotactive: "white",
+	dotinactive: "grey",
 	apac: {
 		slides: [
 			{
@@ -11,7 +11,7 @@ var newData = {
 				header: "Through the Lens of the S&P China 500",
 				subheader: "A more complete pixture of the Chinese economy.",
 				image_desktop: "./assets/images/apac/apac-d-1.jpg",
-				image_mobile: "../assets/images/apac/apac-m-1.jpg",
+				image_mobile: "./assets/images/apac/apac-m-1.jpg",
 				cta: "Learn more 1"
 			},
 			{
@@ -19,7 +19,7 @@ var newData = {
 				header: "Persistence of Australian Active Funds",
 				subheader: "Do outperformers continue outperforming?",
 				image_desktop: "./assets/images/apac/apac-d-2.jpg",
-				image_mobile: "../assets/images/apac/apac-m-2.jpg",
+				image_mobile: "./assets/images/apac/apac-m-2.jpg",
 				cta: "Learn more 2"
 			},
 			{
@@ -27,7 +27,7 @@ var newData = {
 				header: "Understanding Commodities and the S&P GSCI",
 				subheader: "What tools exist for accessing various facets of the commodities market?",
 				image_desktop: "./assets/images/apac/apac-d-3.jpg",
-				image_mobile: "../assets/images/apac/apac-m-3.jpg",
+				image_mobile: "./assets/images/apac/apac-m-3.jpg",
 				cta: "Learn more 3"
 			},
 			{
@@ -35,7 +35,7 @@ var newData = {
 				header: "S&P 500® ESG: Integrating Environmental, Social, and Governance",
 				subheader: "How does it compare to the S&P 500?",
 				image_desktop: "./assets/images/apac/apac-d-4.jpg",
-				image_mobile: "../assets/images/apac/apac-m-4.jpg",
+				image_mobile: "./assets/images/apac/apac-m-4.jpg",
 				cta: "Learn more 4"
 			}
 		]

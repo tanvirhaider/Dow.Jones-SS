@@ -25,6 +25,10 @@ class Sprite {
         if (data.display) {
             obj.style.display = data.display;
         }
+
+        if (data.index) {
+            obj.setAttribute('data-index-number', data.index.toString());
+        }
     
         if (data.width) {
             obj.width = data.width;

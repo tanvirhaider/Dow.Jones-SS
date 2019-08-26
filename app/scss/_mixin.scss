@@ -20,7 +20,7 @@
   }
  
   @else if $class == medium {
-    @media all and (min-width: 971px) and (max-width: 1200px)  { @content; }
+    @media all and (min-width: 971px) and (max-width: 1300px)  { @content; }
   }
 
   // @else if $class == mediumLarge {
@@ -28,9 +28,11 @@
   // }
  
   @else if $class == large {
-    @media all and (min-width: 1201px) and (max-width: 1450px) { @content; }
+    @media all and (min-width: 1301px) and (max-width: 1450px) { @content; }
   }
 
 }
 
+
+// 768, 1024, 1280, 1366
 

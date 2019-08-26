@@ -1,84 +1,50 @@
 
 
-
-// @codekit-prepend "adData.js"
-// @codekit-prepend "TweenMax.js"
+// @codekit-prepend  "adData.js"
 // @codekit-prepend  "willow-js/stage.js"
 // @codekit-prepend  "willow-js/sprite.js"
 // @codekit-prepend  "willow-js/utility.js"
 // @codekit-prepend  "willow-js/slideshow-2.0.js"
 // @codekit-append  "_Sizmek.js"
 
-var adData = {
-    unit: "panthere",   // "panthere", "santos"
-    panthere: {
-        headlines: 
-            [
-               // "PANTHÈRE DE CARTIER WATCH", 
-                "PANTHÈRE DE CARTIER WATCH", 
-                "PANTHÈRE DE CARTIER WATCH", 
-              //  "PANTHÈRE DE CARTIER WATCH", 
-              //  "PANTHÈRE DE CARTIER WATCH", 
-                "PANTHÈRE DE CARTIER WATCH"
-            ],
 
-        summaries: 
-            [
-               // "DOUBLE LOOP, YELLOW GOLD", 
-                "RHODIUMIZED 18K WHITE GOLD", 
-                "PINK GOLD, DIAMONDS", 
-               // "PINK GOLD, DIAMONDS", 
-               // "RHODIUMIZED WHITE GOLD, DIAMONDS", 
-                "MINI, YELLOW GOLD"
-            ],
 
-        images: 
-            [
-              //  "assets/images/panthere-0.png", 
-                "assets/images/panthere-1.png", 
-                "assets/images/panthere-2.png", 
-              //  "assets/images/panthere-3.png", 
-              //  "assets/images/panthere-4.png", 
-                "assets/images/panthere-5.png"
-            ],
-        
-        logo: "assets/images/logo-panthere.png",
 
-        imagesofset: []
-    },
-    santos: {
-        headlines: 
-            [
-                "SANTOS DE CARTIER WATCH", 
-               // "SANTOS DE CARTIER WATCH", 
-                "SANTOS DE CARTIER WATCH", 
-              //  "SANTOS DE CARTIER WATCH", 
-                "SANTOS DE CARTIER WATCH"
-            ],
 
-        summaries: 
-            [
-                "LARGE MODEL, AUTOMATIC, PINK GOLD", 
-               // "MEDIUM MODEL, AUTOMATIC, YELLOW GOLD", 
-                "MEDIUM MODEL, AUTOMATIC, YELLOW GOLD", 
-               // "MEDIUM MODEL, AUTOMATIC, YELLOW GOLD AND STEEL", 
-                "SMALL MODEL, 18K PINK GOLD AND STEEL"
-            ],
 
-        images: 
-            [
-                "assets/images/santos-0.png", 
-               // "assets/images/santos-1.png", 
-                "assets/images/santos-2.png", 
-              // "assets/images/santos-3.png", 
-                "assets/images/santos-4.png"
-            ],
+var numberOfSlides = newData[newData.unit].slides.length;
+var currentQueue = [];
+var randomizedData = [];
+var imgQueue = [];
+var randomQueue = [];
+var imgQueueMobile = [];
+var randomMobileQueue = [];
+var offsetArray = [];
+var currentRandomIndex;
 
-            logo: "assets/images/logo-santos.png",
 
-        imagesofset: []
-    }
+for (var i = 0; i < numberOfSlides; i++) { currentQueue.push(i);}
+
+var randomIndex = shuffle(currentQueue);
+var shiftenIndex = arrayOfset(randomIndex);
+
+for (var i = 0; i < randomIndex.length; i++) {
+    var tempIndex = randomIndex[i];
+   // console.log("current temp index: ", tempIndex);
+    randomizedData.push(newData[newData.unit].slides[tempIndex]);
 }
+
+for (var i = 0; i < numberOfSlides; i++) {
+    imgQueue.push (randomizedData[i].image_desktop);
+    imgQueueMobile.push (randomizedData[i].image_mobile);
+}
+
+//randomQueue = shuffle(imgQueue);
+//randomMobileQueue = shuffle(imgQueueMobile);
+offsetArray = arrayOfset(imgQueue);
+
+//console.log("random data: ",randomizedData);
+
 
 
 window.navBlock = false;
@@ -97,37 +63,31 @@ localPreview = document.location === top.location;
 try { var widthOftheContainer = document.body.ownerDocument.defaultView.frameElement.parentElement.parentElement.parentElement.offsetWidth; } catch (Error) { }
 var heightOftheContainer = undefined;
 
-
-
-
-var offsetArray = [];
-
-
-
 var slideTrackerInt = 1;
-var totalSlideCount = newData[newData.unit].slides.length;
+//var totalSlideCount = newData[newData.unit].slides.length;
 //console.log("total number of products: ",totalSlideCount);
+
+
 
 var intervalTimer = 2;
 var intervalCount = 0;
 var fireMetrics = true;
 var autoAnimationStatus = true;
-var imgQueue = [];
+
+var slide1exitindex = randomizedData[0].index;
+var slide3exitindex = randomizedData[1].index;
+
+
+//console.log(numberOfSlides,currentQueue,randomIndex,shiftenIndex);
+
 
 
 function init (all) {
 
-    for (var i = 0; i < totalSlideCount; i++) {
-        imgQueue.push (newData[newData.unit].slides[i].image_desktop);
-        // newData[newData.unit].slides[0].image_desktop
-    }
+  
+    
 
-    offsetArray = arrayOfset(imgQueue);
-   // adData[adData["unit"]].imagesofset = offsetArray;
-
-    // console.group("FXL");
-
-    console.log(newData[newData.unit].slides[0].image_desktop);
+    //console.log("original: ",imgQueue, "random: ",randomQueue);
 
     stage = new Stage({
         id: "willow-ad-stage",
@@ -175,13 +135,16 @@ function init (all) {
 
   
 
-    for (var i = 0; i < totalSlideCount; i++) {
+    for (var i = 0; i < numberOfSlides; i++) {
 
         var slideCopy = new Sprite({
             id: "slideCopy-" + i,
             class: "slideCopy-style",
+            index: randomizedData[i].index,
             container: slideCopyContainer.obj
         });
+
+        //console.log(slideCopy);
 
         // slideCopy.obj.style.visibility = "hidden";
         if (i != 0) {
@@ -200,14 +163,16 @@ function init (all) {
             id: "header-" + i,
             class: "header-style",
             container: slideCopy.obj,
-            text: { content: newData[newData.unit].slides[i].header },
+            text: { content: randomizedData[i].header },
+            index: randomizedData[i].index
         });
 
         var summary = new Sprite({
             id: "summary-" + i,
             class: "summary-style",
             container: slideCopy.obj,
-            text: { content: newData[newData.unit].slides[i].subheader },
+            text: { content: randomizedData[i].subheader },
+            index: randomizedData[i].index
         });
 
         var cta = new Sprite({
@@ -215,10 +180,11 @@ function init (all) {
             class: "cta-style",
             container: slideCopy.obj,
             click: { function: ctaClicked },
-            text: { content: newData[newData.unit].slides[i].cta }
+            text: { content: randomizedData[i].cta },
+            index: randomizedData[i].index
         });
 
-        slideBG.obj.setAttribute('data-index-number', i);
+      //  slideBG.obj.setAttribute('data-index-number', i);
     }
 
   
@@ -247,7 +213,7 @@ function init (all) {
         id: "navCopy",
         class: "navCopy-style",
         container: nav.obj,
-        text: { content: slideTrackerInt + " of " + totalSlideCount },
+        text: { content: slideTrackerInt + " of " + numberOfSlides },
     });
 
     var nav_left = new Sprite({
@@ -262,11 +228,11 @@ function init (all) {
                 updateCounter("left");
 
                 if (navBlock == false) {
-                    // CLM.move({
-                    //     direction: "forward",
-                    //     delta: adWidth,
-                    //     duration: 0.85
-                    // }); // move left
+                    CLM.move({
+                        direction: "forward",
+                        delta: adWidth,
+                        duration: 0.85
+                    }); // move left
 
 
                     CL1.move({
@@ -301,11 +267,11 @@ function init (all) {
                 updateCounter("right");
 
                 if (navBlock == false) {
-                    // CLM.move({
-                    //     direction: "reverse",
-                    //     delta: adWidth,
-                    //     duration: 0.75
-                    // }); // move left
+                    CLM.move({
+                        direction: "reverse",
+                        delta: adWidth,
+                        duration: 0.75
+                    }); // move left
 
                     CL1.move({
                         direction: "reverse",
@@ -335,12 +301,29 @@ function init (all) {
 
 
     var CLM = new Slideshow({
-        images: adData[adData["unit"]].images,
+        images: imgQueueMobile,
         width: adWidth,
+        responsive: true,
         height: 380,
         id: "product-galleryM",
         class: "ss-card-style-M",
-        container: ssMitem.obj
+        container: ssMitem.obj,
+        counter: function(event) {
+           // console.log("dot value: ",event.detail + 1);
+            updateDotPosition ({
+                selected: event.detail,
+                total: numberOfSlides
+            })
+            
+        },
+        dots: {
+            class: "slideshow-dots-style",
+            active: newData.dotactive,
+            inactive: newData.dotinactive,
+            background: "slideshow-dots-bg",
+            interactive: false
+        }
+
     });
 
     var bottomCover = new Sprite({
@@ -359,7 +342,7 @@ function init (all) {
         class: "ss-card-style-1",
         container: ss1item.obj,
         counter: function(event) {
-            console.log(event.detail + 1);
+           // console.log(event.detail + 1);
         }
     });
 
@@ -374,9 +357,22 @@ function init (all) {
         container: ss3item.obj
     });
 
+    function updateDotPosition (data) {
+        var currentIndex = Number((data.selected % data.total));
+        for (var i = 0; i < data.total; i++) {
+            var tempDot = document.getElementById("product-galleryM" + "-dot-" + i);
+            if (tempDot.dataset) {
+                var activeColor = tempDot.dataset.active;
+                var inActiveColor = tempDot.dataset.inactive;
+                if (i != currentIndex) {tempDot.style.backgroundColor = inActiveColor;}
+                else {tempDot.style.backgroundColor = activeColor;}
+            }
+        }
+    }
+
 
     function eventForProducts () {
-        var totalProductinSlides = totalSlideCount * 3;
+        var totalProductinSlides = numberOfSlides * 3;
         for (var i = 0; i < totalProductinSlides; i++) {
             var currentItemGalleryM = document.getElementById("product-galleryM-cardHolder-box-" + i);
             var currentItemGallery1 = document.getElementById("product-gallery1-cardHolder-box-" + i);
@@ -390,43 +386,67 @@ function init (all) {
     }
 
     function productGallery1Click (event) {
-        console.log("gallery 1 clicked");
-        var currentIdx = Number(event.target.dataset.indexNumber);
-        productExit(currentIdx);
+      window.EB.clickthrough("product-" + slide1exitindex);
     }
 
     function productGallery3Click (event) {
-        console.log("gallery 3 clicked");
-        var currentIdx = Number(event.target.dataset.indexNumber) + 1;
-        productExit(currentIdx);
+        window.EB.clickthrough("product-" + slide3exitindex);
     }
 
     eventForProducts();
 
 
     function updateCounter (whichDirection) {
+
+        var tempOffset;
+
         if (navBlock == false) {
             //customMetrics(whichDirection);
 
             if (whichDirection == "left") {
                 slideTrackerInt--;
                 if (slideTrackerInt < 1) {
-                    slideTrackerInt = totalSlideCount;
+                    slideTrackerInt = numberOfSlides;
                 }
 
                 window.EB.userActionCounter("Click-left-Nav");
+
+               // console.log("slide tracker integer: ",    randomizedData[slideTrackerInt - 1].index);
+
+               
+
+               
+
             }
             else {
                 slideTrackerInt++;
-                if (slideTrackerInt > totalSlideCount) {
+                if (slideTrackerInt > numberOfSlides) {
                     slideTrackerInt = 1;
                 }
 
                 window.EB.userActionCounter("Click-right-Nav");
 
+
+               // console.log("slide tracker integer: ",    randomizedData[slideTrackerInt - 1].index);
+
+               // slide1exitindex = randomizedData[slideTrackerInt - 1].index;
+               // slide3exitindex = randomizedData[slideTrackerInt - 1].index;
+                
+
             }
 
-            navCopy.obj.innerHTML = slideTrackerInt + " of " + totalSlideCount;
+            if (numberOfSlides <= slideTrackerInt) {
+                tempOffset = 0;
+            }
+
+            else {
+                tempOffset = slideTrackerInt;
+            }
+
+            slide1exitindex = randomizedData[slideTrackerInt - 1].index;
+            slide3exitindex = randomizedData[tempOffset].index;
+
+            navCopy.obj.innerHTML = slideTrackerInt + " of " + numberOfSlides;
             var IdxForCopy = Number(slideTrackerInt - 1);
             updateCopySlides(IdxForCopy);
         }
@@ -437,11 +457,11 @@ function init (all) {
     function updateCopySlides (whichSlide) {
         if (copyBlock == false) {
             if (navBlock == false) {
-                console.log("update copy ", whichSlide);
+               // console.log("update copy ", whichSlide);
                 copyBlock = true;
 
                 //customMetrics(whichSlide);
-                for (var i = 0; i < totalSlideCount; i++) {
+                for (var i = 0; i < numberOfSlides; i++) {
                     var tempSlide = document.getElementById("slideCopy-" + i);
                     if (i != whichSlide) {
                         TweenMax.to(tempSlide, 0.25, { autoAlpha: 0 });
@@ -457,11 +477,11 @@ function init (all) {
                 }
 
                 try {
-                    var calval = Number(totalSlideCount - whichSlide) - 1;
-                    console.log("customMetrics-",calval);
-                    console.log("whichOne-",whichSlide);
+                    var calval = Number(numberOfSlides - whichSlide) - 1;
+                   // console.log("customMetrics-",calval);
+                   // console.log("whichOne-",whichSlide);
                     if (fireMetrics == true) {
-                        window.EB.userActionCounter("view-product-" + calval);
+                       // window.EB.userActionCounter("view-product-" + calval);
                     }  
                 }
                 catch (Error) {console.log(Error);}
@@ -474,13 +494,13 @@ function init (all) {
         window.EB.userActionCounter("view-product-0");
         window.EB.userActionCounter("view-product-1");
         window.EB.userActionCounter("view-product-2");
-        //window.EB.userActionCounter("view-product-3");
+        window.EB.userActionCounter("view-product-3");
         //window.EB.userActionCounter("view-product-4");
         //window.EB.userActionCounter("view-product-5");
-        window.EB.clickthrough("product-0");
         window.EB.clickthrough("product-1");
         window.EB.clickthrough("product-2");
-        //window.EB.clickthrough("product-3");
+        window.EB.clickthrough("product-3");
+        window.EB.clickthrough("product-4");
         //window.EB.clickthrough("product-4");
         //window.EB.clickthrough("product-5");
         window.EB.userActionCounter("Click-left-Nav");
@@ -488,12 +508,15 @@ function init (all) {
     }
 
     function ctaClicked (event) {
-        console.log("cta clicked");
+       // console.log("cta clicked");
         var tempCTAindex;
-        if (slideTrackerInt == 4) { tempCTAindex = 3; }
-        if (slideTrackerInt == 2) { tempCTAindex = 1; }
-        if (slideTrackerInt == 3) { tempCTAindex = 2; }
-        if (slideTrackerInt == 1) { tempCTAindex = 4; }
+       // console.log(event.target.dataset.indexNumber);
+        var tempIndex = event.target.dataset.indexNumber;
+        window.EB.clickthrough("product-" + tempIndex);
+       // if (slideTrackerInt == 4) { tempCTAindex = 3; }
+       // if (slideTrackerInt == 2) { tempCTAindex = 1; }
+      //  if (slideTrackerInt == 3) { tempCTAindex = 2; }
+      //  if (slideTrackerInt == 1) { tempCTAindex = 4; }
         //productExit(tempCTAindex);
     }
 
@@ -503,8 +526,8 @@ function init (all) {
             autoAnimationStatus = false;
             fireMetrics = true;
             try { clearInterval(autoRunInterval); } catch (Error) { }
-            console.log("product exit: ", whichOne);
-            window.EB.clickthrough("product-" + whichOne % totalSlideCount);
+          //  console.log("product exit: ", whichOne);
+            window.EB.clickthrough("product-" + whichOne % numberOfSlides);
         }
     }
 
@@ -513,11 +536,11 @@ function init (all) {
         //console.log("automation init");
         intervalCount++;
 
-        // CLM.move({
-        //     direction: "reverse",
-        //     delta: adWidth,
-        //     duration: 0.85
-        // }); // move left
+        CLM.move({
+            direction: "reverse",
+            delta: adWidth,
+            duration: 0.85
+        }); // move left
 
 
         CL1.move({

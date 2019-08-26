@@ -6,7 +6,7 @@
         background-color: #000000;
         box-sizing: border-box;
         overflow: hidden;
-       // border: 1px solid rgb(189, 189, 189);
+        border: 1px solid rgb(0, 0, 0);
 
         left: 0px;
         right: 0px;
@@ -30,6 +30,7 @@
             min-height: 380px;
             height: 100%;
             width: 100%;
+            border: unset;
            // border: 1px solid lightgray;
         }
 
@@ -84,6 +85,45 @@
                     visibility: visible;
                 }
             }
+
+            // ul {
+            //    // background-color: yellow;
+            //     display: flex;
+            //     z-index: 99999;
+            //     margin-left: auto;
+            //     margin-right: auto;
+
+            //     li {
+            //         width: $dot-diameter;
+            //         height: $dot-diameter;
+            //     }
+            // }
+
+            .slideshow-dots-style {
+                list-style-type: none;
+                display: flex;
+                position: absolute;
+                z-index: 999;
+                left: 0px;
+                right: 0px;
+                margin-left: auto;
+                margin-right: auto;
+                width: auto;
+                justify-content: center;
+                bottom: 12px;
+
+                li {
+                    width: $dot-diameter;
+                    height: $dot-diameter;
+                    border-radius: 50%;
+                    box-sizing: border-box;
+                    margin-left: $dot-gap;
+                    margin-right: $dot-gap;
+                }
+
+            }
+
+           
         }
 
         .ss1item-style {
@@ -93,8 +133,17 @@
             overflow: hidden;
             left: 0px;
 
+            @include breakpoint(small) {
+                width: 100%;
+            }
+
             @include breakpoint(mobile) {
                 visibility: hidden;
+                display: none;
+            }
+
+            @include breakpoint(medium) {
+                width: 50%;
             }
         }
 
@@ -105,8 +154,18 @@
             overflow: hidden;
             //left: 820px;
 
+            @include breakpoint(mobile) {
+                visibility: hidden;
+                display: none;
+            }
+
             @include breakpoint(small) {
                 visibility: hidden;
+            }
+
+            @include breakpoint(medium) {
+                visibility: hidden;
+                display: none;
             }
         }
 

@@ -174,8 +174,8 @@ class Slideshow {
 
         var scope = this;
 
-        var dotHolder = new Sprite({
-            id:data.id + "-dotHolder",
+        var dotHolderBG = new Sprite({
+            id:data.id + "-dotHolder-bg",
             element: "div",
             class: data.dots.background,
             container: data.container
@@ -282,6 +282,10 @@ class Slideshow {
 
     move (data) {
         var cardHolder = this.cardHolder;
+        
+        var currentSlideShow = document.getElementById(cardHolder.obj.id);
+       // console.log("display property",currentSlideShow.style.display);
+
         var animationDuration;
         var displacement;
         var whichDirection = data.direction;
@@ -332,18 +336,23 @@ class Slideshow {
                     return values[4];
                 }
             }
+
+            try {
+                var deltaX = calculateMatrixX_Distance (ss.obj);
+                if (deltaX <= -(displacement * (ss.numberOfitem + 1)))
+                {
+                    ss.counter = 1;
+                    TweenMax.set(ss.obj,{x:-displacement});
+                }
+                if (deltaX >= 0)
+                {
+                    ss.counter = ss.numberOfitem;
+                    TweenMax.set(ss.obj,{x:-(displacement * ss.numberOfitem)});
+                }
+            }
+            catch (Error) {}
     
-            var deltaX = calculateMatrixX_Distance (ss.obj);
-            if (deltaX <= -(displacement * (ss.numberOfitem + 1)))
-            {
-                ss.counter = 1;
-                TweenMax.set(ss.obj,{x:-displacement});
-            }
-            if (deltaX >= 0)
-            {
-                ss.counter = ss.numberOfitem;
-                TweenMax.set(ss.obj,{x:-(displacement * ss.numberOfitem)});
-            }
+           
         }
 
         if (data.dots) {

@@ -16,11 +16,17 @@
     pointer-events: auto;
 
     @include breakpoint(mobile) {
-        top: 10px;
-        height: 45px;
-        background-position: 50% 50%;
+        top: 15px;
+        height: 55px;
+        background-position: 0% 50%;
         width: 100%;
         max-width: unset;
-        left: unset;
+      //  left: unset;
+      left: 15px;
+     }
+
+     @include breakpoint(small) {
+      left: 15px;
+      top: 15px;
      }
 }

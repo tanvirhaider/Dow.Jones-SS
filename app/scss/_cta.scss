@@ -26,21 +26,41 @@
           //  @include bgimage('cta.png');
             background-size: contain;
             width: auto;
-            background-position: 0% 0%;
-            height: 30px;
+            // background-position: 0% 0%;
+            height: 40px;
             background-repeat: no-repeat;
             border: 1px solid white;
-            padding-left: 10px;
-            padding-right: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            // padding-top: 10px;
+            // padding-bottom: 10px;
 
-            font-family: "Proxima N W02 Smbd";
-            font-size: 18px;
+            // font-family: "Proxima N W02 Smbd";
+            font-family: "Proxima N W01 Reg";
+            font-size: 16px;
+			line-height: 40px;
+			user-select: none;
+			pointer-events: auto;
+			cursor: pointer;
+
+			&:hover {
+				color: black;
+				background-color: white;
+			}
+
+
 
             @include breakpoint(mobile) {
-                background-position: 50% 0%;
-                height: 11px;
-                bottom: 20px;
-                left: 0px;
+                //background-position: 50% 0%;
+               // height: 11px;
+                bottom: 30px;
+				left: 0px;
+				right: 0px;
+				margin-left: auto;
+				margin-right: auto;
+				position: relative;
+				text-align: center;
+				max-width: 150px;
                 //right: 20px;
             }
         }
