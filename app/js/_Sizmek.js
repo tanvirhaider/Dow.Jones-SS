@@ -28,8 +28,17 @@ function initializeLocalPreview() {
             uid: 0,
             customJSVars: {}
         },
-        clickthrough: function(){console.log("EB.clickthrough: ", arguments);},
-        userActionCounter: function(){console.log("EB.userActionCounter: ", arguments);},
+        clickthrough: function(){
+            if (newData.DEBUG) {
+                console.log("EB.clickthrough: ", arguments);
+            }
+           
+        },
+        userActionCounter: function(){
+            if (newData.DEBUG) {
+                console.log("EB.userActionCounter: ", arguments);
+            }
+        },
         _sendMessage: function () {return;},
         API: {
             browser: {
@@ -224,8 +233,7 @@ function checkIfAdKitReady(event) {
        // if (window.localPreview) {console.log("this is a sizmek ad");}
         try{
             if (window.localPreview) {
-                console.group("ad-debug");
-                console.log("---- PREVIEW MODE ----");
+              
                     adkit.onReady(function(){
                         window.initializeLocalPreview();
                         USE_RESIZE_LISTENER = true;

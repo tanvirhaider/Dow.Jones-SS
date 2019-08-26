@@ -1,15 +1,10 @@
 
 
-// @codekit-prepend  "adData.js"
 // @codekit-prepend  "willow-js/stage.js"
 // @codekit-prepend  "willow-js/sprite.js"
 // @codekit-prepend  "willow-js/utility.js"
 // @codekit-prepend  "willow-js/slideshow-2.0.js"
 // @codekit-append  "_Sizmek.js"
-
-
-
-
 
 
 var numberOfSlides = newData[newData.unit].slides.length;
@@ -23,6 +18,7 @@ var offsetArray = [];
 var currentRandomIndex;
 
 
+
 for (var i = 0; i < numberOfSlides; i++) { currentQueue.push(i);}
 
 var randomIndex = shuffle(currentQueue);
@@ -30,8 +26,13 @@ var shiftenIndex = arrayOfset(randomIndex);
 
 for (var i = 0; i < randomIndex.length; i++) {
     var tempIndex = randomIndex[i];
-   // console.log("current temp index: ", tempIndex);
-    randomizedData.push(newData[newData.unit].slides[tempIndex]);
+    var tempData = {};
+    tempData = newData[newData.unit].slides[tempIndex];
+    tempData.index = Number( i + 1);
+    
+    randomizedData.push(tempData);
+
+   // console.log("current temp index: ", tempData);
 }
 
 for (var i = 0; i < numberOfSlides; i++) {
@@ -39,11 +40,7 @@ for (var i = 0; i < numberOfSlides; i++) {
     imgQueueMobile.push (randomizedData[i].image_mobile);
 }
 
-//randomQueue = shuffle(imgQueue);
-//randomMobileQueue = shuffle(imgQueueMobile);
 offsetArray = arrayOfset(imgQueue);
-
-//console.log("random data: ",randomizedData);
 
 
 
@@ -67,6 +64,12 @@ var slideTrackerInt = 1;
 //var totalSlideCount = newData[newData.unit].slides.length;
 //console.log("total number of products: ",totalSlideCount);
 
+if (newData.DEBUG) {
+    console.group("Custom-Slideshow");
+    console.log("---- PREVIEW MODE ----");
+    console.log("total number of slides: ",numberOfSlides);
+}
+
 
 
 var intervalTimer = 2;
@@ -83,11 +86,6 @@ var slide3exitindex = randomizedData[1].index;
 
 
 function init (all) {
-
-  
-    
-
-    //console.log("original: ",imgQueue, "random: ",randomQueue);
 
     stage = new Stage({
         id: "willow-ad-stage",
@@ -198,7 +196,7 @@ function init (all) {
                 autoAnimationStatus = false;
                 fireMetrics = true;
                 try { clearInterval(autoRunInterval); } catch (Error) { }
-                window.EB.clickthrough("logo-click");
+                window.EB.clickthrough("Logo_Click");
             }
         }
     });
@@ -386,11 +384,12 @@ function init (all) {
     }
 
     function productGallery1Click (event) {
-      window.EB.clickthrough("product-" + slide1exitindex);
+      window.EB.clickthrough("Slide_" + slide1exitindex + "_Click");
     }
 
     function productGallery3Click (event) {
-        window.EB.clickthrough("product-" + slide3exitindex);
+        //window.EB.clickthrough("product-" + slide3exitindex);
+        window.EB.clickthrough("Slide_" + slide3exitindex + "_Click");
     }
 
     eventForProducts();
@@ -409,14 +408,7 @@ function init (all) {
                     slideTrackerInt = numberOfSlides;
                 }
 
-                window.EB.userActionCounter("Click-left-Nav");
-
-               // console.log("slide tracker integer: ",    randomizedData[slideTrackerInt - 1].index);
-
-               
-
-               
-
+                window.EB.userActionCounter("Previous_Slide");
             }
             else {
                 slideTrackerInt++;
@@ -424,14 +416,7 @@ function init (all) {
                     slideTrackerInt = 1;
                 }
 
-                window.EB.userActionCounter("Click-right-Nav");
-
-
-               // console.log("slide tracker integer: ",    randomizedData[slideTrackerInt - 1].index);
-
-               // slide1exitindex = randomizedData[slideTrackerInt - 1].index;
-               // slide3exitindex = randomizedData[slideTrackerInt - 1].index;
-                
+                window.EB.userActionCounter("Next_Slide");                
 
             }
 
@@ -491,20 +476,12 @@ function init (all) {
 
 
     function dummyTracking () {
-        window.EB.userActionCounter("view-product-0");
-        window.EB.userActionCounter("view-product-1");
-        window.EB.userActionCounter("view-product-2");
-        window.EB.userActionCounter("view-product-3");
-        //window.EB.userActionCounter("view-product-4");
-        //window.EB.userActionCounter("view-product-5");
-        window.EB.clickthrough("product-1");
-        window.EB.clickthrough("product-2");
-        window.EB.clickthrough("product-3");
-        window.EB.clickthrough("product-4");
-        //window.EB.clickthrough("product-4");
-        //window.EB.clickthrough("product-5");
-        window.EB.userActionCounter("Click-left-Nav");
-        window.EB.userActionCounter("Click-right-Nav");
+        window.EB.clickthrough("Slide_1_Click");
+        window.EB.clickthrough("Slide_2_Click");
+        window.EB.clickthrough("Slide_3_Click");
+        window.EB.clickthrough("Slide_4_Click");
+        window.EB.userActionCounter("Previous_Slide");
+        window.EB.userActionCounter("Next_Slide");
     }
 
     function ctaClicked (event) {
@@ -512,12 +489,8 @@ function init (all) {
         var tempCTAindex;
        // console.log(event.target.dataset.indexNumber);
         var tempIndex = event.target.dataset.indexNumber;
-        window.EB.clickthrough("product-" + tempIndex);
-       // if (slideTrackerInt == 4) { tempCTAindex = 3; }
-       // if (slideTrackerInt == 2) { tempCTAindex = 1; }
-      //  if (slideTrackerInt == 3) { tempCTAindex = 2; }
-      //  if (slideTrackerInt == 1) { tempCTAindex = 4; }
-        //productExit(tempCTAindex);
+        window.EB.clickthrough("Slide_" + tempIndex + "_Click");
+  
     }
 
 

@@ -1,138 +1,5 @@
 "use strict";
 
-var newData = {
-  unit: "apac",
-  // "apac", "latam", "uk", "us"
-  logo: "assets/images/logo.png",
-  dotactive: "white",
-  dotinactive: "grey",
-  apac: {
-    slides: [{
-      index: 1,
-      header: "Through the Lens of the S&P China 500",
-      subheader: "A more complete pixture of the Chinese economy.",
-      image_desktop: "./assets/images/apac/apac-d-1.jpg",
-      image_mobile: "./assets/images/apac/apac-m-1.jpg",
-      cta: "Learn more 1"
-    }, {
-      index: 2,
-      header: "Persistence of Australian Active Funds",
-      subheader: "Do outperformers continue outperforming?",
-      image_desktop: "./assets/images/apac/apac-d-2.jpg",
-      image_mobile: "./assets/images/apac/apac-m-2.jpg",
-      cta: "Learn more 2"
-    }, {
-      index: 3,
-      header: "Understanding Commodities and the S&P GSCI",
-      subheader: "What tools exist for accessing various facets of the commodities market?",
-      image_desktop: "./assets/images/apac/apac-d-3.jpg",
-      image_mobile: "./assets/images/apac/apac-m-3.jpg",
-      cta: "Learn more 3"
-    }, {
-      index: 4,
-      header: "S&P 500® ESG: Integrating Environmental, Social, and Governance",
-      subheader: "How does it compare to the S&P 500?",
-      image_desktop: "./assets/images/apac/apac-d-4.jpg",
-      image_mobile: "./assets/images/apac/apac-m-4.jpg",
-      cta: "Learn more 4"
-    }]
-  },
-  latam: {
-    slides: [{
-      index: 1,
-      header: "Combinando Calidad, Valor y Crecimiento en México",
-      subheader: "Beneficios de combinar factores en México",
-      image_desktop: "../assets/images/latam/latam-d-1.jpg",
-      image_mobile: "../assets/images/latam/latam-m-1.jpg",
-      cta: "Aprenda más"
-    }, {
-      index: 2,
-      header: "El valor de la investigación: habilidad, capacidad y oportunidad",
-      subheader: "¿Cuánto vale la investigación en inversiones?",
-      image_desktop: "../assets/images/latam/latam-d-2.jpg",
-      image_mobile: "../assets/images/latam/latam-m-2.jpg",
-      cta: "Aprenda más"
-    }, {
-      index: 3,
-      header: "El S&P/BMV IPC cumple 40 años",
-      subheader: "La evolución del S&P/BMV IPC desde su lanzamiento",
-      image_desktop: "../assets/images/latam/latam-d-3.jpg",
-      image_mobile: "../assets/images/latam/latam-m-3.jpg",
-      cta: "Aprenda más"
-    }, {
-      index: 4,
-      header: "Scorecard SPIVA® para América Latina",
-      subheader: "El desempeño de los gestores activos frente a sus benchmarks",
-      image_desktop: "../assets/images/latam/latam-d-4.jpg",
-      image_mobile: "../assets/images/latam/latam-m-4.jpg",
-      cta: "Aprenda más"
-    }]
-  },
-  uk: {
-    slides: [{
-      index: 1,
-      header: "The Beauty of Simplicity: S&P 500® Low Volatility High Dividend",
-      subheader: "Compare this index to other dividend approaches.",
-      image_desktop: "../assets/images/uk/uk-d-1.jpg",
-      image_mobile: "../assets/images/uk/uk-m-1.jpg",
-      cta: "Find out"
-    }, {
-      index: 2,
-      header: "Blending Factors In Smart Beta Portfolios",
-      subheader: "Are two factors better than one?",
-      image_desktop: "../assets/images/uk/uk-d-2.jpg",
-      image_mobile: "../assets/images/uk/uk-m-2.jpg",
-      cta: "Find out"
-    }, {
-      index: 3,
-      header: "Defensive Factor Indices vs. Actively Managed Funds",
-      subheader: "Is cost-efficient downside protection possible?",
-      image_desktop: "../assets/images/uk/uk-d-3.jpg",
-      image_mobile: "../assets/images/uk/uk-m-3.jpg",
-      cta: "Find out"
-    }, {
-      index: 4,
-      header: "Placeholder Headline Text",
-      subheader: "Placeholder Headline Text",
-      image_desktop: "../assets/images/uk/uk-d-4.jpg",
-      image_mobile: "../assets/images/uk/uk-m-4.jpg",
-      cta: "Find out"
-    }]
-  },
-  us: {
-    slides: [{
-      index: 1,
-      header: "Is the Low Volatility Anomaly Universal?",
-      subheader: "Does the phenomenon hold up across regions?",
-      image_desktop: "../assets/images/us/us-d-1.jpg",
-      image_mobile: "../assets/images/us/us-m-1.jpg",
-      cta: "Learn more"
-    }, {
-      index: 2,
-      header: "Defense Beyond Bonds: Defensive Strategy Indices",
-      subheader: "Explore an alternative to traditional 60/40 mixes.",
-      image_desktop: "../assets/images/us/us-d-2.jpg",
-      image_mobile: "../assets/images/us/us-m-2.jpg",
-      cta: "Learn more"
-    }, {
-      index: 3,
-      header: "The Beauty of Simplicity: S&P 500®  Low Volatility High Dividend",
-      subheader: "Compare this index to other dividend approaches.",
-      image_desktop: "../assets/images/us/us-d-3.jpg",
-      image_mobile: "../assets/images/us/us-m-3.jpg",
-      cta: "Learn more"
-    }, {
-      index: 4,
-      header: "S&P 500® ESG: Integrating Environmental, Social, and Governance",
-      subheader: "How does it compare to the S&P 500?",
-      image_desktop: "../assets/images/us/us-d-4.jpg",
-      image_mobile: "../assets/images/us/us-m-4.jpg",
-      cta: "Learn more"
-    }]
-  }
-};
-"use strict";
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -894,7 +761,6 @@ function () {
 }();
 "use strict";
 
-// @codekit-prepend  "adData.js"
 // @codekit-prepend  "willow-js/stage.js"
 // @codekit-prepend  "willow-js/sprite.js"
 // @codekit-prepend  "willow-js/utility.js"
@@ -918,20 +784,19 @@ var randomIndex = shuffle(currentQueue);
 var shiftenIndex = arrayOfset(randomIndex);
 
 for (var i = 0; i < randomIndex.length; i++) {
-  var tempIndex = randomIndex[i]; // console.log("current temp index: ", tempIndex);
-
-  randomizedData.push(newData[newData.unit].slides[tempIndex]);
+  var tempIndex = randomIndex[i];
+  var tempData = {};
+  tempData = newData[newData.unit].slides[tempIndex];
+  tempData.index = Number(i + 1);
+  randomizedData.push(tempData); // console.log("current temp index: ", tempData);
 }
 
 for (var i = 0; i < numberOfSlides; i++) {
   imgQueue.push(randomizedData[i].image_desktop);
   imgQueueMobile.push(randomizedData[i].image_mobile);
-} //randomQueue = shuffle(imgQueue);
-//randomMobileQueue = shuffle(imgQueueMobile);
+}
 
-
-offsetArray = arrayOfset(imgQueue); //console.log("random data: ",randomizedData);
-
+offsetArray = arrayOfset(imgQueue);
 window.navBlock = false;
 window.copyBlock = false;
 var DEBUG = true;
@@ -951,6 +816,12 @@ var heightOftheContainer = undefined;
 var slideTrackerInt = 1; //var totalSlideCount = newData[newData.unit].slides.length;
 //console.log("total number of products: ",totalSlideCount);
 
+if (newData.DEBUG) {
+  console.group("Custom-Slideshow");
+  console.log("---- PREVIEW MODE ----");
+  console.log("total number of slides: ", numberOfSlides);
+}
+
 var intervalTimer = 2;
 var intervalCount = 0;
 var fireMetrics = true;
@@ -959,7 +830,6 @@ var slide1exitindex = randomizedData[0].index;
 var slide3exitindex = randomizedData[1].index; //console.log(numberOfSlides,currentQueue,randomIndex,shiftenIndex);
 
 function init(all) {
-  //console.log("original: ",imgQueue, "random: ",randomQueue);
   stage = new Stage({
     id: "willow-ad-stage",
     class: "stageStyle",
@@ -1066,7 +936,7 @@ function init(all) {
           clearInterval(autoRunInterval);
         } catch (Error) {}
 
-        window.EB.clickthrough("logo-click");
+        window.EB.clickthrough("Logo_Click");
       }
     }
   });
@@ -1259,11 +1129,12 @@ function init(all) {
   }
 
   function productGallery1Click(event) {
-    window.EB.clickthrough("product-" + slide1exitindex);
+    window.EB.clickthrough("Slide_" + slide1exitindex + "_Click");
   }
 
   function productGallery3Click(event) {
-    window.EB.clickthrough("product-" + slide3exitindex);
+    //window.EB.clickthrough("product-" + slide3exitindex);
+    window.EB.clickthrough("Slide_" + slide3exitindex + "_Click");
   }
 
   eventForProducts();
@@ -1280,7 +1151,7 @@ function init(all) {
           slideTrackerInt = numberOfSlides;
         }
 
-        window.EB.userActionCounter("Click-left-Nav"); // console.log("slide tracker integer: ",    randomizedData[slideTrackerInt - 1].index);
+        window.EB.userActionCounter("Previous_Slide");
       } else {
         slideTrackerInt++;
 
@@ -1288,9 +1159,7 @@ function init(all) {
           slideTrackerInt = 1;
         }
 
-        window.EB.userActionCounter("Click-right-Nav"); // console.log("slide tracker integer: ",    randomizedData[slideTrackerInt - 1].index);
-        // slide1exitindex = randomizedData[slideTrackerInt - 1].index;
-        // slide3exitindex = randomizedData[slideTrackerInt - 1].index;
+        window.EB.userActionCounter("Next_Slide");
       }
 
       if (numberOfSlides <= slideTrackerInt) {
@@ -1346,20 +1215,12 @@ function init(all) {
   }
 
   function dummyTracking() {
-    window.EB.userActionCounter("view-product-0");
-    window.EB.userActionCounter("view-product-1");
-    window.EB.userActionCounter("view-product-2");
-    window.EB.userActionCounter("view-product-3"); //window.EB.userActionCounter("view-product-4");
-    //window.EB.userActionCounter("view-product-5");
-
-    window.EB.clickthrough("product-1");
-    window.EB.clickthrough("product-2");
-    window.EB.clickthrough("product-3");
-    window.EB.clickthrough("product-4"); //window.EB.clickthrough("product-4");
-    //window.EB.clickthrough("product-5");
-
-    window.EB.userActionCounter("Click-left-Nav");
-    window.EB.userActionCounter("Click-right-Nav");
+    window.EB.clickthrough("Slide_1_Click");
+    window.EB.clickthrough("Slide_2_Click");
+    window.EB.clickthrough("Slide_3_Click");
+    window.EB.clickthrough("Slide_4_Click");
+    window.EB.userActionCounter("Previous_Slide");
+    window.EB.userActionCounter("Next_Slide");
   }
 
   function ctaClicked(event) {
@@ -1367,11 +1228,7 @@ function init(all) {
     var tempCTAindex; // console.log(event.target.dataset.indexNumber);
 
     var tempIndex = event.target.dataset.indexNumber;
-    window.EB.clickthrough("product-" + tempIndex); // if (slideTrackerInt == 4) { tempCTAindex = 3; }
-    // if (slideTrackerInt == 2) { tempCTAindex = 1; }
-    //  if (slideTrackerInt == 3) { tempCTAindex = 2; }
-    //  if (slideTrackerInt == 1) { tempCTAindex = 4; }
-    //productExit(tempCTAindex);
+    window.EB.clickthrough("Slide_" + tempIndex + "_Click");
   }
 
   function productExit(whichOne) {
@@ -1458,10 +1315,14 @@ function initializeLocalPreview() {
       customJSVars: {}
     },
     clickthrough: function clickthrough() {
-      console.log("EB.clickthrough: ", arguments);
+      if (newData.DEBUG) {
+        console.log("EB.clickthrough: ", arguments);
+      }
     },
     userActionCounter: function userActionCounter() {
-      console.log("EB.userActionCounter: ", arguments);
+      if (newData.DEBUG) {
+        console.log("EB.userActionCounter: ", arguments);
+      }
     },
     _sendMessage: function _sendMessage() {
       return;
@@ -1694,8 +1555,6 @@ function checkIfAdKitReady(event) {
     // if (window.localPreview) {console.log("this is a sizmek ad");}
     try {
       if (window.localPreview) {
-        console.group("ad-debug");
-        console.log("---- PREVIEW MODE ----");
         adkit.onReady(function () {
           window.initializeLocalPreview();
           USE_RESIZE_LISTENER = true;
