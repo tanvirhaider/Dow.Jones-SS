@@ -9,6 +9,13 @@
 	],
 "creatorBuild": "28905",
 "files": {
+	"/.gitignore": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "/build/.gitignore",
+		"oF": 1
+		},
 	"/app/assets/images/apac/apac-d-1.jpg": {
 		"ft": 16384,
 		"iS": 153900,
@@ -406,10 +413,10 @@
 	"/app/config.js": {
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/build/config-min.js",
-		"oF": 0,
+		"mi": 0,
+		"oA": 2,
+		"oAP": "/build/config.js",
+		"oF": 3,
 		"sC": 3,
 		"tS": 0
 		},
@@ -699,9 +706,9 @@
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/build/README.html",
-		"oF": 0,
+		"oF": 1,
 		"oFM": 0,
 		"oS": 0,
 		"pHT": 0,

@@ -868,32 +868,41 @@ function init(all) {
   });
 
   for (var i = 0; i < numberOfSlides; i++) {
+    var slideContent = new Sprite({
+      id: "slideContent-" + i,
+      class: "slideContent-style",
+      index: randomizedData[i].index,
+      container: slideCopyContainer.obj
+    });
+    var slideBG = new Sprite({
+      id: "slideBG-" + i,
+      class: "slideBG-style",
+      container: slideContent.obj,
+      click: {
+        function: bgClicked
+      },
+      index: randomizedData[i].index
+    });
     var slideCopy = new Sprite({
       id: "slideCopy-" + i,
       class: "slideCopy-style",
       index: randomizedData[i].index,
-      container: slideCopyContainer.obj
-    }); //console.log(slideCopy);
-    // slideCopy.obj.style.visibility = "hidden";
+      container: slideContent.obj
+    });
 
     if (i != 0) {
-      TweenMax.set(slideCopy.obj, {
+      TweenMax.set([slideCopy.obj, slideBG.obj], {
         autoAlpha: 0
       });
     }
 
-    var slideBG = new Sprite({
-      id: "slideBG-" + i,
-      class: "slideBG-style",
-      container: slideCopy.obj,
-      click: {
-        function: ctaClicked
-      }
-    });
     var header = new Sprite({
       id: "header-" + i,
       class: "header-style",
       container: slideCopy.obj,
+      click: {
+        function: messagingClicked
+      },
       text: {
         content: randomizedData[i].header
       },
@@ -903,6 +912,9 @@ function init(all) {
       id: "summary-" + i,
       class: "summary-style",
       container: slideCopy.obj,
+      click: {
+        function: messagingClicked
+      },
       text: {
         content: randomizedData[i].subheader
       },
@@ -1184,13 +1196,14 @@ function init(all) {
 
         for (var i = 0; i < numberOfSlides; i++) {
           var tempSlide = document.getElementById("slideCopy-" + i);
+          var tempBG = document.getElementById("slideBG-" + i);
 
           if (i != whichSlide) {
-            TweenMax.to(tempSlide, 0.25, {
+            TweenMax.to([tempSlide, tempBG], 0.25, {
               autoAlpha: 0
             });
           } else {
-            TweenMax.to(tempSlide, 0.25, {
+            TweenMax.to([tempSlide, tempBG], 0.25, {
               delay: 0.1,
               autoAlpha: 1,
               onComplete: function onComplete() {
@@ -1219,16 +1232,36 @@ function init(all) {
     window.EB.clickthrough("Slide_2_Click");
     window.EB.clickthrough("Slide_3_Click");
     window.EB.clickthrough("Slide_4_Click");
+    window.EB.clickthrough("Background_1_Click");
+    window.EB.clickthrough("Background_2_Click");
+    window.EB.clickthrough("Background_3_Click");
+    window.EB.clickthrough("Background_4_Click");
+    window.EB.clickthrough("Messaging_1_Click");
+    window.EB.clickthrough("Messaging_2_Click");
+    window.EB.clickthrough("Messaging_3_Click");
+    window.EB.clickthrough("Messaging_4_Click");
     window.EB.userActionCounter("Previous_Slide");
     window.EB.userActionCounter("Next_Slide");
   }
 
+  function bgClicked(event) {
+    var tempCTAindex;
+    var tempIndex = event.target.dataset.indexNumber;
+    window.EB.clickthrough("Background_" + tempIndex + "_Click");
+  }
+
   function ctaClicked(event) {
+    var tempCTAindex;
+    var tempIndex = event.target.dataset.indexNumber;
+    window.EB.clickthrough("Slide_" + tempIndex + "_Click");
+  }
+
+  function messagingClicked(event) {
     // console.log("cta clicked");
     var tempCTAindex; // console.log(event.target.dataset.indexNumber);
 
     var tempIndex = event.target.dataset.indexNumber;
-    window.EB.clickthrough("Slide_" + tempIndex + "_Click");
+    window.EB.clickthrough("Messaging_" + tempIndex + "_Click");
   }
 
   function productExit(whichOne) {
